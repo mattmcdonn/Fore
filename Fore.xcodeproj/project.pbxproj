@@ -14,6 +14,8 @@
 		820589E32A2AA42F00217BF1 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820589E22A2AA42F00217BF1 /* StatsView.swift */; };
 		820589E52A2AA44E00217BF1 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820589E42A2AA44E00217BF1 /* PlayView.swift */; };
 		820589E72A2AA46700217BF1 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820589E62A2AA46700217BF1 /* AccountView.swift */; };
+		822FE6992A2DB13C008FB355 /* GolfCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FE6982A2DB13C008FB355 /* GolfCoursesView.swift */; };
+		822FE69B2A2DB415008FB355 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FE69A2A2DB415008FB355 /* AchievementsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		820589E22A2AA42F00217BF1 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		820589E42A2AA44E00217BF1 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
 		820589E62A2AA46700217BF1 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		822FE6982A2DB13C008FB355 /* GolfCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfCoursesView.swift; sourceTree = "<group>"; };
+		822FE69A2A2DB415008FB355 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,12 +80,22 @@
 		820589DD2A2A7A9F00217BF1 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				822FE69C2A2DBDDA008FB355 /* StatsOptionViews */,
 				820589DE2A2A7ABE00217BF1 /* Dashboard.swift */,
 				820589E22A2AA42F00217BF1 /* StatsView.swift */,
 				820589E42A2AA44E00217BF1 /* PlayView.swift */,
 				820589E62A2AA46700217BF1 /* AccountView.swift */,
+				822FE6982A2DB13C008FB355 /* GolfCoursesView.swift */,
+				822FE69A2A2DB415008FB355 /* AchievementsView.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		822FE69C2A2DBDDA008FB355 /* StatsOptionViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatsOptionViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,7 +172,9 @@
 				820589D02A2A749500217BF1 /* ForeApp.swift in Sources */,
 				820589E52A2AA44E00217BF1 /* PlayView.swift in Sources */,
 				820589E32A2AA42F00217BF1 /* StatsView.swift in Sources */,
+				822FE69B2A2DB415008FB355 /* AchievementsView.swift in Sources */,
 				820589E72A2AA46700217BF1 /* AccountView.swift in Sources */,
+				822FE6992A2DB13C008FB355 /* GolfCoursesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

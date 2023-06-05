@@ -11,6 +11,12 @@ struct Dashboard: View {
     var body: some View{
         // displays tabs at the bottom of UI
         TabView{
+            
+            GolfCoursesView().tabItem(){
+                Image(systemName: "figure.golf")
+                Text("Golf Courses")
+            }
+            
             StatsView().tabItem(){
                 Image(systemName: "chart.bar")
                 Text("Statistics").fontDesign(.rounded)
@@ -23,12 +29,18 @@ struct Dashboard: View {
                 
             }
             
+            AchievementsView().tabItem(){
+                Image(systemName: "trophy")
+                Text("Achievements").fontDesign(.rounded)
+                
+            }
+            
             AccountView().tabItem(){
                 Image(systemName: "person.fill")
                 Text("Account").fontDesign(.rounded)
-                
+            
             }
-        }
+        }.padding([.leading, .trailing])
     }
 }
 

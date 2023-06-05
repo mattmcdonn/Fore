@@ -39,8 +39,8 @@ struct StatsView: View {
     @State var isSkins = false
     @State var isMatchPlay = false
     @State var strokePlayButtonColor = Color.gray
-    @State var skinsButtonColor = Color.red
-    @State var matchPlayButtonColor = Color.red
+    @State var skinsButtonColor = Color.green
+    @State var matchPlayButtonColor = Color.green
     @State var strokePlayButtonHeight = 38.0
     @State var skinsButtonHeight = 40.0
     @State var matchPlayButtonHeight = 40.0
@@ -51,7 +51,6 @@ struct StatsView: View {
             // vstack for view
             VStack{
                 // hstack for stat type buttons
-                
                 HStack{
                     Menu{
                         NavigationLink(destination: PlayView()){
@@ -59,19 +58,20 @@ struct StatsView: View {
                         }
                         
                         NavigationLink(destination: PlayView()){
-                            Label("Reset stroke play", systemImage: "trash")
+                            Label("Reset stroke play", systemImage: "arrow.counterclockwise")
                         }
                         
                         NavigationLink(destination: PlayView()){
-                            Label("Reset skins", systemImage: "trash")
+                            Label("Reset skins", systemImage: "arrow.counterclockwise")
                         }
                         
                         NavigationLink(destination: PlayView()){
-                            Label("Reset match play", systemImage: "trash")
+                            Label("Reset match play", systemImage: "arrow.counterclockwise")
                         }
                         NavigationLink(destination: PlayView()){
-                            Label("Reset all", systemImage: "trash")
+                            Label("Reset all", systemImage: "arrow.counterclockwise")
                         }
+                        
                         
                         
                     } label:{
@@ -88,8 +88,8 @@ struct StatsView: View {
                         isSkins = false
                         isMatchPlay = false
                         strokePlayButtonColor = Color.gray
-                        skinsButtonColor = Color.red
-                        matchPlayButtonColor = Color.red
+                        skinsButtonColor = Color.green
+                        matchPlayButtonColor = Color.green
                         strokePlayButtonHeight = 38.0
                         skinsButtonHeight = 40.0
                         matchPlayButtonHeight = 40.0
@@ -111,9 +111,9 @@ struct StatsView: View {
                         isStrokePlay = false
                         isSkins = true
                         isMatchPlay = false
-                        strokePlayButtonColor = Color.red
+                        strokePlayButtonColor = Color.green
                         skinsButtonColor = Color.gray
-                        matchPlayButtonColor = Color.red
+                        matchPlayButtonColor = Color.green
                         strokePlayButtonHeight = 40.0
                         skinsButtonHeight = 38.0
                         matchPlayButtonHeight = 40.0
@@ -133,8 +133,8 @@ struct StatsView: View {
                         isStrokePlay = false
                         isSkins = false
                         isMatchPlay = true
-                        strokePlayButtonColor = Color.red
-                        skinsButtonColor = Color.red
+                        strokePlayButtonColor = Color.green
+                        skinsButtonColor = Color.green
                         matchPlayButtonColor = Color.gray
                         strokePlayButtonHeight = 40.0
                         skinsButtonHeight = 40.0
