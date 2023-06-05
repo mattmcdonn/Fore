@@ -1,5 +1,5 @@
 //
-//  StrokePlayReset.swift
+//  StatResetView.swift
 //  Fore
 //
 //  Created by Matthew McDonald on 2023-06-05.

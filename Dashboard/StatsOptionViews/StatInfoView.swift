@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StatInfoView: View {
     var body: some View {
-        Image(systemName: "arrow.counterclockwise").resizable().frame(width: 80, height: 80).bold()
+        Text("")
     }
 }
 

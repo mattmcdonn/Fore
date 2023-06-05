@@ -57,18 +57,18 @@ struct StatsView: View {
                                 Label("Statistics info", systemImage: "info.circle")
                             }
                             
-                            NavigationLink(destination: StatResetView()){
+                            NavigationLink(destination: StrokePlayStatReset()){
                                 Label("Reset stroke play", systemImage: "arrow.counterclockwise")
                             }
                             
-                            NavigationLink(destination: StatResetView()){
+                            NavigationLink(destination: SkinStatReset()){
                                 Label("Reset skins", systemImage: "arrow.counterclockwise")
                             }
                             
-                            NavigationLink(destination: StatResetView()){
+                            NavigationLink(destination: MatchPlayStatReset()){
                                 Label("Reset match play", systemImage: "arrow.counterclockwise")
                             }
-                            NavigationLink(destination: StatResetView()){
+                            NavigationLink(destination: AllStatReset()){
                                 Label("Reset all", systemImage: "arrow.counterclockwise")
                             }
                             
