@@ -1,9 +1,4 @@
-//
-//  StatsView.swift
-//  Fore
-//
-//  Created by Matthew McDonald on 2023-06-02.
-//
+// Statistics view file
 
 import SwiftUI
 
@@ -36,6 +31,7 @@ extension View {
 }
 
 // MARK: -
+// STRUCT: displays view for statistics tab
 struct StatsView: View {
     
     @State var statType = "Stroke play"
@@ -56,7 +52,35 @@ struct StatsView: View {
             VStack{
                 // hstack for stat type buttons
                 
-                
+                HStack{
+                    Menu{
+                        NavigationLink(destination: PlayView()){
+                            Label("Statistics info", systemImage: "info.circle")
+                        }
+                        
+                        NavigationLink(destination: PlayView()){
+                            Label("Reset stroke play", systemImage: "trash")
+                        }
+                        
+                        NavigationLink(destination: PlayView()){
+                            Label("Reset skins", systemImage: "trash")
+                        }
+                        
+                        NavigationLink(destination: PlayView()){
+                            Label("Reset match play", systemImage: "trash")
+                        }
+                        NavigationLink(destination: PlayView()){
+                            Label("Reset all", systemImage: "trash")
+                        }
+                        
+                        
+                    } label:{
+                        Image(systemName: "ellipsis.circle").resizable().frame(width: 35, height: 35)
+                    }.padding(.leading)
+                    
+                    Spacer()
+                    
+                }
                 HStack(spacing: 0){
                     Button(action: {
                         statType = "Stroke play"
@@ -126,10 +150,10 @@ struct StatsView: View {
                         
                     })
                     
-                }.padding()
+                }.padding([.leading, .top, .trailing])
                 
                 
-                Text(statType).font(.system(size: 40)).padding(.bottom, 50)
+                Text(statType).font(.system(size: 40)).padding(.bottom, 30)
                 
                 if statType == "Stroke play"{
                     HStack{
@@ -255,8 +279,8 @@ struct StatsView: View {
                             Spacer()
                         }.padding().scaledToFit()
                     }.scaledToFit()
-                        
-                
+                    
+                    
                     
                 } else if statType == "Match play"{
                     HStack{
@@ -319,8 +343,9 @@ struct StatsView: View {
                             Spacer()
                         }.padding().scaledToFit()
                     }.scaledToFit()
-                    
                 }
+                
+                Spacer()
             }
         }
     }
@@ -328,7 +353,7 @@ struct StatsView: View {
 
 
 // MARK: -
-// application preview display
+// STRUCT: displays simulator for preview
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
         StatsView()
