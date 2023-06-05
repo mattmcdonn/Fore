@@ -46,38 +46,35 @@ struct StatsView: View {
     @State var matchPlayButtonHeight = 40.0
     
     var body: some View {
-        NavigationView{
+       NavigationStack{
             
             // vstack for view
             VStack{
                 // hstack for stat type buttons
                 HStack{
-                    Menu{
-                        NavigationLink(destination: PlayView()){
-                            Label("Statistics info", systemImage: "info.circle")
-                        }
-                        
-                        NavigationLink(destination: PlayView()){
-                            Label("Reset stroke play", systemImage: "arrow.counterclockwise")
-                        }
-                        
-                        NavigationLink(destination: PlayView()){
-                            Label("Reset skins", systemImage: "arrow.counterclockwise")
-                        }
-                        
-                        NavigationLink(destination: PlayView()){
-                            Label("Reset match play", systemImage: "arrow.counterclockwise")
-                        }
-                        NavigationLink(destination: PlayView()){
-                            Label("Reset all", systemImage: "arrow.counterclockwise")
-                        }
-                        
-                        
-                        
-                    } label:{
-                        Image(systemName: "ellipsis.circle").resizable().frame(width: 35, height: 35)
-                    }.padding(.leading)
-                    
+                        Menu{
+                            NavigationLink(destination: StatInfoView()){
+                                Label("Statistics info", systemImage: "info.circle")
+                            }
+                            
+                            NavigationLink(destination: StatResetView()){
+                                Label("Reset stroke play", systemImage: "arrow.counterclockwise")
+                            }
+                            
+                            NavigationLink(destination: StatResetView()){
+                                Label("Reset skins", systemImage: "arrow.counterclockwise")
+                            }
+                            
+                            NavigationLink(destination: StatResetView()){
+                                Label("Reset match play", systemImage: "arrow.counterclockwise")
+                            }
+                            NavigationLink(destination: StatResetView()){
+                                Label("Reset all", systemImage: "arrow.counterclockwise")
+                            }
+                            
+                        } label:{
+                            Image(systemName: "ellipsis.circle").resizable().frame(width: 35, height: 35)
+                        }.padding(.leading)
                     Spacer()
                     
                 }
