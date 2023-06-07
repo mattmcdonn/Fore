@@ -34,6 +34,10 @@ extension View {
 // STRUCT: displays view for statistics tab
 struct StatsView: View {
     
+    // statistic variables
+    
+    
+    // view variables
     @State var statType = "Stroke play"
     @State var isStrokePlay = true
     @State var isSkins = false

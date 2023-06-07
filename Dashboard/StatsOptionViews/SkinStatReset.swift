@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct SkinStatReset: View {
+    
+    @State var resetDisabled = false
+    @State var resetButtonColor = Color.red
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+            Image(systemName: "arrow.counterclockwise").resizable().frame(width: 80, height: 80).bold().padding()
+            Text("Reset Skins Statistics").font(.system(size: 20))
+            
+            
+            Button(action: {
+                resetDisabled = true
+                resetButtonColor = Color.gray
+            }, label: {
+                Text("Reset").frame(width: 100, height: 40).foregroundColor(.white).background(resetButtonColor).cornerRadius(5).disabled(resetDisabled)
+            }).padding()
+            
+            HStack{
+                Image(systemName: "exclamationmark.circle")
+                Text("Resetting will permanently remove all existing saved statistics in skins. \nThis action cannot be undone.")
+            }.padding()
+        }
     }
 }
 
