@@ -15,7 +15,7 @@ struct PlayView: View {
         NavigationStack{
             VStack{
                 
-                NavigationLink(destination: StrokePlayGameView()){
+                NavigationLink(destination: SPPlayerCount()){
                     ZStack{
                         Rectangle().foregroundColor(Color.white).frame(width: 320, height: 200).cornerRadius(5).shadow(radius: 5)
                         VStack{
@@ -42,7 +42,7 @@ struct PlayView: View {
                     }
                 }.padding()
                 
-                NavigationLink(destination: StrokePlayGameView()){
+                NavigationLink(destination: SPPlayerCount()){
                     ZStack{
                         Rectangle().foregroundColor(Color.white).frame(width: 320, height: 200).cornerRadius(5).shadow(radius: 5)
                         VStack{
@@ -69,7 +69,7 @@ struct PlayView: View {
                     }
                 }.padding()
                 
-                NavigationLink(destination: StrokePlayGameView()){
+                NavigationLink(destination: SPPlayerCount()){
                     ZStack{
                         Rectangle().foregroundColor(Color.white).frame(width: 320, height: 200).cornerRadius(5).shadow(radius: 5)
                         VStack{
