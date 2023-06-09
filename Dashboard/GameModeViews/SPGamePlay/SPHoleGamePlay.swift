@@ -13,10 +13,11 @@ struct SPHoleGamePlay: View {
     @State var numOfStrokes = 0
     @State var numOfPlayers = SPPlayerCount().getNumOfPlayers()
     
-    
     var body: some View {
         NavigationStack{
             VStack{
+                
+                Text(player1.getPlayerName())
                 HStack{
                     Button(action:{
                         if numOfStrokes >= 1{

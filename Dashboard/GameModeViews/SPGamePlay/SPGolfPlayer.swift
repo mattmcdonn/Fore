@@ -15,7 +15,20 @@ class SPGolfPlayer{
         self.playerName = playerName
         self.golfHoles = golfHoles
     }
+    
+    func getPlayerName() -> String{
+        return self.playerName
+    }
+    
+    func setPlayerName(newName: String){
+        self.playerName = newName
+    }
+    
+    func addGolfHole(golfHole: SPGolfHole){
+        self.golfHoles.append(golfHole)
+    }
+    
+    func getGolfHole(holeIndex: Int) -> SPGolfHole{
+        return golfHoles[holeIndex]
+    }
 }
-
-
-// make a golf game class and hold all players and for each player that have the golf holes they played, to access each specific hole use playerName.SPGolfHole[3]

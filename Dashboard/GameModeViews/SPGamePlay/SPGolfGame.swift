@@ -23,6 +23,14 @@ class SPOnePlayerGolfGame{
     func setNumberOfHoles(newNumOfHoles: Int){
         self.numberOfHoles = newNumOfHoles
     }
+    
+    func getPlayerOne() -> SPGolfPlayer{
+        return self.player1
+    }
+    
+    func getNumOfPlayers() -> Int{
+        return 1
+    }
 }
 
 class SPTwoPlayerGolfGame{
@@ -43,7 +51,22 @@ class SPTwoPlayerGolfGame{
     func setNumberOfHoles(newNumOfHoles: Int){
         self.numberOfHoles = newNumOfHoles
     }
+    
+    func getPlayerOne() -> SPGolfPlayer{
+        return self.player1
+    }
+    
+    func getPlayerTwo() -> SPGolfPlayer{
+        return self.player2
+    }
+    
+    func getNumOfPlayers() -> Int{
+        return 2
+    }
 }
+
+
+
 
 class SPThreePlayerGolfGame{
     var player1: SPGolfPlayer
@@ -64,6 +87,22 @@ class SPThreePlayerGolfGame{
     
     func setNumberOfHoles(newNumOfHoles: Int){
         self.numberOfHoles = newNumOfHoles
+    }
+    
+    func getPlayerOne() -> SPGolfPlayer{
+        return self.player1
+    }
+    
+    func getPlayerTwo() -> SPGolfPlayer{
+        return self.player2
+    }
+    
+    func getPlayerThree() -> SPGolfPlayer{
+        return self.player3
+    }
+    
+    func getNumOfPlayers() -> Int{
+        return 3
     }
 }
 
@@ -88,5 +127,25 @@ class SPFourPlayerGolfGame{
     
     func setNumberOfHoles(newNumOfHoles: Int){
         self.numberOfHoles = newNumOfHoles
+    }
+    
+    func getPlayerOne() -> SPGolfPlayer{
+        return self.player1
+    }
+    
+    func getPlayerTwo() -> SPGolfPlayer{
+        return self.player2
+    }
+    
+    func getPlayerThree() -> SPGolfPlayer{
+        return self.player3
+    }
+    
+    func getPlayerFour() -> SPGolfPlayer{
+        return self.player4
+    }
+    
+    func getNumOfPlayers() -> Int{
+        return 4
     }
 }

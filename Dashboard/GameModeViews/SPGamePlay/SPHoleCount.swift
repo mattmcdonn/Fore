@@ -71,19 +71,46 @@ struct SPHoleCount: View {
         
         if SPPlayerCount().getNumOfPlayers() == 1{
             
-            var playerOne = SPGolfPlayer(playerName: "PLAYER1", golfHoles: [])
+            let PLAYER_ONE = SPGolfPlayer(playerName: "PLAYER 1", golfHoles: [])
             
-            var SPGame = SPOnePlayerGolfGame(player1: playerOne, numberOfHoles: numOfHoles)
+            let SP_GAME = SPOnePlayerGolfGame(player1: PLAYER_ONE, numberOfHoles: numOfHoles)
         }
         
         if SPPlayerCount().getNumOfPlayers() == 2{
             
-            var playerOne = SPGolfPlayer(playerName: "PLAYER1", golfHoles: [])
+            let PLAYER_ONE = SPGolfPlayer(playerName: "PLAYER 1", golfHoles: [])
             
-            var playerTwo = SPGolfPlayer(playerName: "PLAYER2", golfHoles: [])
+            let PLAYER_TWO = SPGolfPlayer(playerName: "PLAYER 2", golfHoles: [])
             
-            var SPGame = SPTwoPlayerGolfGame(player1: playerOne, player2: playerTwo, numberOfHoles: numOfHoles)
+            let SP_GAME = SPTwoPlayerGolfGame(player1: PLAYER_ONE, player2: PLAYER_TWO, numberOfHoles: numOfHoles)
         }
+        
+        if SPPlayerCount().getNumOfPlayers() == 3{
+            
+            let PLAYER_ONE = SPGolfPlayer(playerName: "PLAYER 1", golfHoles: [])
+            
+            let PLAYER_TWO = SPGolfPlayer(playerName: "PLAYER 2", golfHoles: [])
+            
+            let PLAYER_THREE = SPGolfPlayer(playerName: "PLAYER 3", golfHoles: [])
+            
+            let SP_GAME = SPThreePlayerGolfGame(player1: PLAYER_ONE, player2: PLAYER_TWO, player3: PLAYER_THREE, numberOfHoles: numOfHoles)
+            
+        }
+        
+        if SPPlayerCount().getNumOfPlayers() == 4{
+            
+            let PLAYER_ONE = SPGolfPlayer(playerName: "PLAYER 1", golfHoles: [])
+            
+            let PLAYER_TWO = SPGolfPlayer(playerName: "PLAYER 2", golfHoles: [])
+            
+            let PLAYER_THREE = SPGolfPlayer(playerName: "PLAYER 3", golfHoles: [])
+            
+            let PLAYER_FOUR = SPGolfPlayer(playerName: "PLAYER 4", golfHoles: [])
+            
+            let SP_GAME = SPFourPlayerGolfGame(player1: PLAYER_ONE, player2: PLAYER_TWO, player3: PLAYER_THREE, player4: PLAYER_FOUR, numberOfHoles: numOfHoles)
+            
+        }
+        
     }
 }
 
