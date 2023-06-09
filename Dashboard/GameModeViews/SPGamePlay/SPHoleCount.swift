@@ -55,7 +55,6 @@ struct SPHoleCount: View {
                 
             }
                 NavigationLink(destination: SPHoleGamePlay()){
-                    
                     ZStack{
                         Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(startButtonColor)
                         Text("Start").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
@@ -67,8 +66,28 @@ struct SPHoleCount: View {
             }.frame(width: 350, height: 750)
             
         }
-    }
     
+    func setUpGame(){
+        
+        if SPPlayerCount().getNumOfPlayers() == 1{
+            
+            var playerOne = SPGolfPlayer(playerName: "PLAYER1", golfHoles: [])
+            
+            var SPGame = SPOnePlayerGolfGame(player1: playerOne, numberOfHoles: numOfHoles)
+        }
+        
+        if SPPlayerCount().getNumOfPlayers() == 2{
+            
+            var playerOne = SPGolfPlayer(playerName: "PLAYER1", golfHoles: [])
+            
+            var playerTwo = SPGolfPlayer(playerName: "PLAYER2", golfHoles: [])
+            
+            var SPGame = SPTwoPlayerGolfGame(player1: playerOne, player2: playerTwo, numberOfHoles: numOfHoles)
+        }
+    }
+}
+
+
 struct SPHoleCount_Previews: PreviewProvider {
     static var previews: some View {
         SPHoleCount()

@@ -11,7 +11,7 @@ struct SPPlayerCount: View {
     
     @State var numOfPlayers = 0
     @State var noPlayersSelected = true
-    
+    @State var golfPlayers = [SPGolfPlayer]()
     
     
     @State var buttonOneColor = Color.white
@@ -111,6 +111,14 @@ struct SPPlayerCount: View {
             
             
         }.frame(width: 350, height: 750)
+    }
+    
+    func getNumOfPlayers() -> Int{
+        return numOfPlayers
+    }
+    
+    func getPlayers() -> [SPGolfPlayer]{
+        return golfPlayers
     }
 }
 

@@ -10,8 +10,8 @@ import SwiftUI
 struct SPHoleGamePlay: View {
     
     @State var holeNum = 0
-    @State var currPlayer = 1
     @State var numOfStrokes = 0
+    @State var numOfPlayers = SPPlayerCount().getNumOfPlayers()
     
     
     var body: some View {
@@ -19,6 +19,9 @@ struct SPHoleGamePlay: View {
             VStack{
                 HStack{
                     Button(action:{
+                        if numOfStrokes >= 1{
+                            numOfStrokes -= 1
+                        }
                         
                     }, label: {
                         ZStack{
@@ -37,7 +40,7 @@ struct SPHoleGamePlay: View {
                     }.frame(width: 200, height: 50)
                     
                     Button(action:{
-                        
+                        numOfStrokes += 1
                     }, label: {
                         ZStack{
                             Rectangle().frame(width: 50, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(.white)
@@ -48,6 +51,7 @@ struct SPHoleGamePlay: View {
                     })
                     
                 }
+                
             }
         }.navigationTitle("Hole number here").navigationBarBackButtonHidden(true)
     }
@@ -59,35 +63,4 @@ struct SPHoleGamePlay_Previews: PreviewProvider {
     }
 }
 
-class SPGolfHole {
-    var holeNumber: Int
-    var playerStrokes: Int
-    var parNumber: Int
-    
-    init(holeNumber: Int, parNumber: Int, playerStrokes: Int){
-        self.holeNumber = holeNumber
-        self.parNumber = parNumber
-        self.playerStrokes = playerStrokes
-    }
-    
-    func getHoleNumber() -> Int{
-        return self.holeNumber
-    }
-    
-    func setHoleNumber(holeNum: Int){
-        self.holeNumber = holeNum
-    }
-    
-    func getParNumber() -> Int{
-        return self.parNumber
-    }
-    
-    func setParNumber(parNum: Int){
-        self.parNumber = parNum
-    }
-    
-    func getPlayerOneStrokes() -> Int{
-        return self.playerStrokes
-    }
-    
-}
+
