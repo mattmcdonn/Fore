@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+var numOfHoles = 0
+
 struct SPHoleCount: View {
     
-    @State var numOfHoles = 0
+    
     @State var noHoleSelected = true
     @State var buttonNineColor = Color.white
     @State var buttonEighteenColor = Color.white
@@ -54,64 +56,25 @@ struct SPHoleCount: View {
                 
                 
             }
-                NavigationLink(destination: SPHoleGamePlay()){
+            
+            NavigationLink(destination: ReviewBeforePlay()){
+                    
                     ZStack{
                         Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(startButtonColor)
                         Text("Start").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
                         
                     }
-                }.padding(.top, 200).disabled(noHoleSelected)
+            }.padding(.top, 200).disabled(noHoleSelected)
                 
                 
             }.frame(width: 350, height: 750)
             
         }
     
-    func setUpGame(){
-        
-        if SPPlayerCount().getNumOfPlayers() == 1{
-            
-            let PLAYER_ONE = SPGolfPlayer(playerName: "PLAYER 1", golfHoles: [])
-            
-            let SP_GAME = SPOnePlayerGolfGame(player1: PLAYER_ONE, numberOfHoles: numOfHoles)
-        }
-        
-        if SPPlayerCount().getNumOfPlayers() == 2{
-            
-            let PLAYER_ONE = SPGolfPlayer(playerName: "PLAYER 1", golfHoles: [])
-            
-            let PLAYER_TWO = SPGolfPlayer(playerName: "PLAYER 2", golfHoles: [])
-            
-            let SP_GAME = SPTwoPlayerGolfGame(player1: PLAYER_ONE, player2: PLAYER_TWO, numberOfHoles: numOfHoles)
-        }
-        
-        if SPPlayerCount().getNumOfPlayers() == 3{
-            
-            let PLAYER_ONE = SPGolfPlayer(playerName: "PLAYER 1", golfHoles: [])
-            
-            let PLAYER_TWO = SPGolfPlayer(playerName: "PLAYER 2", golfHoles: [])
-            
-            let PLAYER_THREE = SPGolfPlayer(playerName: "PLAYER 3", golfHoles: [])
-            
-            let SP_GAME = SPThreePlayerGolfGame(player1: PLAYER_ONE, player2: PLAYER_TWO, player3: PLAYER_THREE, numberOfHoles: numOfHoles)
-            
-        }
-        
-        if SPPlayerCount().getNumOfPlayers() == 4{
-            
-            let PLAYER_ONE = SPGolfPlayer(playerName: "PLAYER 1", golfHoles: [])
-            
-            let PLAYER_TWO = SPGolfPlayer(playerName: "PLAYER 2", golfHoles: [])
-            
-            let PLAYER_THREE = SPGolfPlayer(playerName: "PLAYER 3", golfHoles: [])
-            
-            let PLAYER_FOUR = SPGolfPlayer(playerName: "PLAYER 4", golfHoles: [])
-            
-            let SP_GAME = SPFourPlayerGolfGame(player1: PLAYER_ONE, player2: PLAYER_TWO, player3: PLAYER_THREE, player4: PLAYER_FOUR, numberOfHoles: numOfHoles)
-            
-        }
-        
+    func getNumOfHoles() -> Int{
+        return numOfHoles
     }
+        
 }
 
 

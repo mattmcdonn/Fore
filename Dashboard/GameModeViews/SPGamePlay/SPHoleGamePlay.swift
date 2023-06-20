@@ -7,17 +7,64 @@
 
 import SwiftUI
 
+struct ReviewBeforePlay: View{
+    var body: some View{
+            VStack{
+                Text("Review game settings").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black).padding()
+                
+                ZStack{
+                    
+                    Rectangle().foregroundColor(Color.white).frame(width: 320, height: 200).cornerRadius(5).shadow(radius: 5)
+                    VStack{
+                        HStack{
+                            Text("Stroke play").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                            Spacer()
+                        }.padding(.bottom)
+                        HStack{
+                            Text(String(SPPlayerCount().getNumOfPlayers()) + " players").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                            Spacer()
+                        }
+                        HStack{
+                            Text(String(SPHoleCount().getNumOfHoles()) + " holes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                            Spacer()
+                        }
+                        Spacer()
+                        
+                        Rectangle().foregroundColor(.black).frame(width: 290, height: 10).cornerRadius(5)
+                        
+                    }.frame(width: 290, height: 170)
+                }.padding()
+                
+                
+                NavigationLink(destination: SPHoleGamePlay()){
+                    Button(action:{
+                        setUpGame()
+                    }, label: {
+                        ZStack{
+                            Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(.green)
+                            Text("Start").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
+                            
+                        }
+                    }).padding()
+                }
+            }
+    }
+    
+    func setUpGame() -> Void{
+        
+        
+    }
+}
+
 struct SPHoleGamePlay: View {
     
     @State var holeNum = 0
     @State var numOfStrokes = 0
-    @State var numOfPlayers = SPPlayerCount().getNumOfPlayers()
     
     var body: some View {
         NavigationStack{
             VStack{
                 
-                Text(player1.getPlayerName())
                 HStack{
                     Button(action:{
                         if numOfStrokes >= 1{
@@ -60,7 +107,7 @@ struct SPHoleGamePlay: View {
 
 struct SPHoleGamePlay_Previews: PreviewProvider {
     static var previews: some View {
-        SPHoleGamePlay()
+        ReviewBeforePlay()
     }
 }
 

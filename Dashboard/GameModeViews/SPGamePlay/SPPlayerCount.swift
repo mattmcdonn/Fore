@@ -7,12 +7,12 @@
 
 import SwiftUI
 
+var numOfPlayers = 0
+
 struct SPPlayerCount: View {
     
-    @State var numOfPlayers = 0
-    @State var noPlayersSelected = true
-    @State var golfPlayers = [SPGolfPlayer]()
     
+    @State var noPlayersSelected = true
     
     @State var buttonOneColor = Color.white
     @State var buttonTwoColor = Color.white
@@ -117,9 +117,6 @@ struct SPPlayerCount: View {
         return numOfPlayers
     }
     
-    func getPlayers() -> [SPGolfPlayer]{
-        return golfPlayers
-    }
 }
 
 struct SPPlayerCount_Previews: PreviewProvider {
