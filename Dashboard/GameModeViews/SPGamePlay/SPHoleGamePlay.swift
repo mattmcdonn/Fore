@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ReviewBeforePlay: View{
     var body: some View{
+        NavigationStack{
             VStack{
                 Text("Review game settings").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black).padding()
                 
@@ -36,22 +37,22 @@ struct ReviewBeforePlay: View{
                 }.padding()
                 
                 
-                NavigationLink(destination: SPHoleGamePlay()){
-                    Button(action:{
-                        setUpGame()
-                    }, label: {
+                NavigationLink(destination: SPHoleGamePlay().onAppear(perform: setUpGame)){
+                    
+                   
+                        
                         ZStack{
                             Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(.green)
                             Text("Start").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
-                            
                         }
-                    }).padding()
-                }
+                    
+                }//
             }
+        }
     }
     
     func setUpGame() -> Void{
-        
+        print("This printed")
         
     }
 }
