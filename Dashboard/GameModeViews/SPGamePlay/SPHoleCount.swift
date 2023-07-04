@@ -57,7 +57,7 @@ struct SPHoleCount: View {
                 
             }
             
-            NavigationLink(destination: ReviewBeforePlay()){
+            NavigationLink(destination: SPReviewSetup()){
                     
                     ZStack{
                         Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(startButtonColor)
