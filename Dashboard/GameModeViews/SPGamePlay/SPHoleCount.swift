@@ -7,10 +7,19 @@
 
 import SwiftUI
 
+var PLAYER_ONE = SPGolfPlayer(playerName: "NA", golfHoles: [])
+var PLAYER_TWO = SPGolfPlayer(playerName: "NA", golfHoles: [])
+var PLAYER_THREE = SPGolfPlayer(playerName: "NA", golfHoles: [])
+var PLAYER_FOUR = SPGolfPlayer(playerName: "NA", golfHoles: [])
+
+var GOLF_GAME = SPGolfGame(player1: PLAYER_ONE, player2: PLAYER_TWO, player3: PLAYER_THREE, player4: PLAYER_FOUR, numberOfHoles: 0)
+
 var numOfHoles = 0
 
 struct SPHoleCount: View {
     
+    @State var NUM_OF_PLAYERS = SPPlayerCount().getNumOfPlayers()
+    @State var NUM_OF_HOLES = numOfHoles
     
     @State var noHoleSelected = true
     @State var buttonNineColor = Color.white
@@ -57,7 +66,7 @@ struct SPHoleCount: View {
                 
             }
             
-            NavigationLink(destination: SPReviewSetup()){
+            NavigationLink(destination: SPReviewSetup().onAppear(perform: setUpGame)){
                     
                     ZStack{
                         Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(startButtonColor)
@@ -75,6 +84,31 @@ struct SPHoleCount: View {
         return numOfHoles
     }
         
+    func setUpGame() -> Void{
+        if NUM_OF_PLAYERS == 1{
+            PLAYER_ONE.setPlayerName(newName: "Player 1")
+            PLAYER_TWO.setPlayerName(newName: "NA")
+            PLAYER_THREE.setPlayerName(newName: "NA")
+            PLAYER_FOUR.setPlayerName(newName: "NA")
+        } else if NUM_OF_PLAYERS == 2{
+            PLAYER_ONE.setPlayerName(newName: "Player 1")
+            PLAYER_TWO.setPlayerName(newName: "Player 2")
+            PLAYER_THREE.setPlayerName(newName: "NA")
+            PLAYER_FOUR.setPlayerName(newName: "NA")
+        } else if NUM_OF_PLAYERS == 3{
+            PLAYER_ONE.setPlayerName(newName: "Player 1")
+            PLAYER_TWO.setPlayerName(newName: "Player 2")
+            PLAYER_THREE.setPlayerName(newName: "Player 3")
+            PLAYER_FOUR.setPlayerName(newName: "NA")
+        } else if NUM_OF_PLAYERS == 4{
+            PLAYER_ONE.setPlayerName(newName: "Player 1")
+            PLAYER_TWO.setPlayerName(newName: "Player 2")
+            PLAYER_THREE.setPlayerName(newName: "Player 3")
+            PLAYER_FOUR.setPlayerName(newName: "Player 4")
+        }
+        
+        GOLF_GAME.setNumberOfHoles(newNumOfHoles: NUM_OF_HOLES)
+    }
 }
 
 
