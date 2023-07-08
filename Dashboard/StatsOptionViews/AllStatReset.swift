@@ -24,7 +24,7 @@ struct AllStatReset: View {
                 resetButtonColor = Color.gray
             }, label: {
                 Text("Reset").frame(width: 100, height: 40).foregroundColor(.white).background(resetButtonColor).cornerRadius(5).disabled(resetDisabled)
-            }).padding()
+            }).padding().disabled(resetDisabled)
             
             HStack{
                 Image(systemName: "exclamationmark.circle")

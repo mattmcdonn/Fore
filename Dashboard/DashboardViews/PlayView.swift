@@ -98,7 +98,7 @@ struct PlayView: View {
                 
                 Spacer()
             }
-        }
+        }.navigationBarBackButtonHidden(true)
         
         
         

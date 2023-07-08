@@ -10,7 +10,7 @@ import SwiftUI
 var holeNum = 1
 
 
-struct parForHole: View{
+struct SPParForHole: View{
     
     @State var par = 0
     @State var noParSelected = true
@@ -99,7 +99,7 @@ struct SPHoleGamePlay: View {
     @State var numOfPlayers = SPPlayerCount().getNumOfPlayers()
     @State var numOfHoles = SPHoleCount().getNumOfHoles()
     @State var numOfStrokes = 0
-    @State var parNum = parForHole().getPar()
+    @State var parNum = SPParForHole().getPar()
     
     @State var playerOneStrokes = 0
     @State var playerTwoStrokes = 0
@@ -116,7 +116,7 @@ struct SPHoleGamePlay: View {
     @State var noPrevPlayer = true
     @State var noNextPlayer = false
     
-    @State var readyForNextHole = false
+    @State var notReadyForNextHole = true
     
     
     var body: some View {
@@ -231,38 +231,65 @@ struct SPHoleGamePlay: View {
                     nextHole()
                 }, label: {
                     ZStack{
-                            Rectangle().frame(width: 350, height: 60).cornerRadius(5).shadow(radius: 3).foregroundColor(.white)
-                            Text("Next hole").fontDesign(.rounded).font(.system(size: 18)).bold().foregroundColor(.black)
+                        Rectangle().frame(width: 350, height: 60).cornerRadius(5).shadow(radius: 3).foregroundColor(.white)
+                        Text("Next hole").fontDesign(.rounded).font(.system(size: 18)).bold().foregroundColor(.black)
                     }
-                })
-                    
+                }).disabled(notReadyForNextHole)
                 
-                Button(action:{
-                    
-                }, label: {
+                
+                NavigationLink(destination: SPEndGame()){
                     ZStack{
                         Rectangle().frame(width: 350, height: 60).cornerRadius(5).shadow(radius: 3).foregroundColor(.red)
                         Text("End game").fontDesign(.rounded).font(.system(size: 18)).bold().foregroundColor(.black)
-                    }
-                }).padding()
-                
+                    }.padding()
+                    
+                }
             }
-        }.navigationTitle("Hole " + String(holeNum))
+        }.navigationTitle("Hole " + String(holeNum)).navigationBarBackButtonHidden(true)
     }
     
     func nextHole() -> Void{
+        
+        var GOLF_HOLE = SPGolfHole(holeNumber: 0, parNumber: 0, playerStrokes: 0)
+        
         if numOfPlayers == 1{
-            var GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerOneStrokes)
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerOneStrokes)
             PLAYER_ONE.addGolfHole(golfHole: GOLF_HOLE)
         } else if numOfPlayers == 2{
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerOneStrokes)
+            PLAYER_ONE.addGolfHole(golfHole: GOLF_HOLE)
             
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerTwoStrokes)
+            PLAYER_TWO.addGolfHole(golfHole: GOLF_HOLE)
+        } else if numOfPlayers == 3{
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerOneStrokes)
+            PLAYER_ONE.addGolfHole(golfHole: GOLF_HOLE)
+            
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerTwoStrokes)
+            PLAYER_TWO.addGolfHole(golfHole: GOLF_HOLE)
+            
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerThreeStrokes)
+            PLAYER_THREE.addGolfHole(golfHole: GOLF_HOLE)
+        } else {
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerOneStrokes)
+            PLAYER_ONE.addGolfHole(golfHole: GOLF_HOLE)
+            
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerTwoStrokes)
+            PLAYER_TWO.addGolfHole(golfHole: GOLF_HOLE)
+            
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerThreeStrokes)
+            PLAYER_THREE.addGolfHole(golfHole: GOLF_HOLE)
+            
+            GOLF_HOLE = SPGolfHole(holeNumber: holeNum, parNumber: parNum, playerStrokes: playerFourStrokes)
+            PLAYER_FOUR.addGolfHole(golfHole: GOLF_HOLE)
         }
         
         resetHole()
         
         if holeNum < numOfHoles{
             holeNum += 1
-            // add navigation link
+        } else {
+            
         }
     }
     
@@ -282,11 +309,11 @@ struct SPHoleGamePlay: View {
         noPrevPlayer = true
         noNextPlayer = false
         
-        readyForNextHole = false
+        notReadyForNextHole = true
         
         numOfStrokes = 0
         
-        parForHole().setPar(newValue: 0)
+        SPParForHole().setPar(newValue: 0)
     }
     
     func nextPlayer() -> Void{
@@ -387,8 +414,68 @@ struct SPHoleGamePlay: View {
             return PLAYER_FOUR.getPlayerName()
         }
     }
+    
+    func isReadyForNextHole() -> Void{
+        if numOfPlayers == 1 && playerOneStrokes > 0 {
+            notReadyForNextHole = false
+        } else {
+            // add message that tells user to input a stroke above zero to continue
+        }
+        
+        if numOfPlayers == 2 && playerOneStrokes > 0 && playerTwoStrokes > 0{
+            notReadyForNextHole = false
+        } else {
+            // message
+        }
+        
+        if numOfPlayers == 3 && playerOneStrokes > 0 && playerTwoStrokes > 0 && playerThreeStrokes > 0{
+            notReadyForNextHole = false
+        } else {
+            // message
+        }
+        
+        if numOfPlayers == 4 && playerOneStrokes > 0 && playerTwoStrokes > 0 && playerThreeStrokes > 0 && playerFourStrokes > 0{
+            notReadyForNextHole = false
+        } else {
+            // message
+        }
+        
+        
+        
+    }
 }
 
+
+struct SPGameScoreCard: View{
+    var body: some View{
+        NavigationStack{
+            VStack{
+                Text("Hello world")
+            }
+        }
+    }
+}
+
+struct SPEndGame: View{
+    
+    var body: some View {
+        VStack{
+            
+            Image(systemName: "rectangle.portrait.and.arrow.forward").resizable().frame(width: 80, height: 80).bold().padding().padding(.leading, 20)
+            Text("End current golf game").font(.system(size: 20))
+            
+            
+            NavigationLink(destination: PlayView().onAppear(perform: SPHoleGamePlay().resetHole)){
+                Text("End game").frame(width: 150, height: 40).foregroundColor(.white).background(Color.red).cornerRadius(5)
+            }.padding()
+            
+            HStack{
+                Image(systemName: "exclamationmark.circle")
+                Text("Statistics from the current game will not be saved once the game is ended.")
+            }.padding()
+        }
+    }
+}
 
 struct SPHoleGamePlay_Previews: PreviewProvider {
     static var previews: some View {
