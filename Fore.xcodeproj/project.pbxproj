@@ -17,6 +17,7 @@
 		822B048E2A415E6600ABA0A2 /* SPReviewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B048D2A415E6600ABA0A2 /* SPReviewSetup.swift */; };
 		822FE6992A2DB13C008FB355 /* GolfCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FE6982A2DB13C008FB355 /* GolfCoursesView.swift */; };
 		822FE69B2A2DB415008FB355 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FE69A2A2DB415008FB355 /* AchievementsView.swift */; };
+		8242091B2A5C8DBF00A5CA2C /* SPGameScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242091A2A5C8DBF00A5CA2C /* SPGameScoreCard.swift */; };
 		825EDC1B2A32815A003A8800 /* SPGolfPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EDC1A2A32815A003A8800 /* SPGolfPlayer.swift */; };
 		825EDC1D2A328179003A8800 /* SPGolfHole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EDC1C2A328179003A8800 /* SPGolfHole.swift */; };
 		825EDC1F2A32B49F003A8800 /* SPGolfGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EDC1E2A32B49F003A8800 /* SPGolfGame.swift */; };
@@ -45,6 +46,7 @@
 		822B048D2A415E6600ABA0A2 /* SPReviewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPReviewSetup.swift; sourceTree = "<group>"; };
 		822FE6982A2DB13C008FB355 /* GolfCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfCoursesView.swift; sourceTree = "<group>"; };
 		822FE69A2A2DB415008FB355 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		8242091A2A5C8DBF00A5CA2C /* SPGameScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGameScoreCard.swift; sourceTree = "<group>"; };
 		825EDC1A2A32815A003A8800 /* SPGolfPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGolfPlayer.swift; sourceTree = "<group>"; };
 		825EDC1C2A328179003A8800 /* SPGolfHole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGolfHole.swift; sourceTree = "<group>"; };
 		825EDC1E2A32B49F003A8800 /* SPGolfGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGolfGame.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				825EDC1C2A328179003A8800 /* SPGolfHole.swift */,
 				825EDC1E2A32B49F003A8800 /* SPGolfGame.swift */,
 				822B048D2A415E6600ABA0A2 /* SPReviewSetup.swift */,
+				8242091A2A5C8DBF00A5CA2C /* SPGameScoreCard.swift */,
 			);
 			path = SPGamePlay;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				820589E32A2AA42F00217BF1 /* StatsView.swift in Sources */,
 				82FA561F2A31036A004CAD8F /* SPHoleCount.swift in Sources */,
 				82FDBFDD2A2E693B0018F462 /* SkinStatReset.swift in Sources */,
+				8242091B2A5C8DBF00A5CA2C /* SPGameScoreCard.swift in Sources */,
 				822B048E2A415E6600ABA0A2 /* SPReviewSetup.swift in Sources */,
 				82FDBFE52A2FD34A0018F462 /* SPPlayerCount.swift in Sources */,
 				822FE69B2A2DB415008FB355 /* AchievementsView.swift in Sources */,

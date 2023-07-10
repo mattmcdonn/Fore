@@ -40,7 +40,7 @@ struct SPReviewSetup: View{
                 }.padding()
                 
                 
-                NavigationLink(destination: SPHoleGamePlay()){
+                NavigationLink(destination: SPParForHole()){
                         ZStack{
                             Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(.green)
                             Text("Start").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)

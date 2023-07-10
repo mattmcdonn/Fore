@@ -19,7 +19,7 @@ struct SPPlayerCount: View {
     @State var buttonThreeColor = Color.white
     @State var buttonFourColor = Color.white
     
-    @State var continueButtonColor = Color.gray
+    @State var continueButtonColor = Color.white
     
     
     var body: some View {
@@ -124,3 +124,4 @@ struct SPPlayerCount_Previews: PreviewProvider {
         SPPlayerCount()
     }
 }
+

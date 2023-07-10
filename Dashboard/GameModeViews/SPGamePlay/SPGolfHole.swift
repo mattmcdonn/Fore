@@ -37,5 +37,9 @@ class SPGolfHole {
     func getPlayerStrokes() -> Int{
         return self.playerStrokes
     }
+    
+    func setPlayerStrokes(strokeNum: Int) -> Void{
+        self.playerStrokes = strokeNum
+    }
 }
 
