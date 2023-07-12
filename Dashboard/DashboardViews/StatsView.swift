@@ -3,7 +3,6 @@
 import SwiftUI
 
 // MARK: -
-// STRUCT: uploaded code to allow certain corners of buttons to be rounded
 struct CornerRadiusStyle: ViewModifier {
     var radius: CGFloat
     var corners: UIRectCorner
@@ -31,13 +30,9 @@ extension View {
 }
 
 // MARK: -
-// STRUCT: displays view for statistics tab
+
 struct StatsView: View {
     
-    // statistic variables
-    
-    
-    // view variables
     @State var statType = "Stroke play"
     @State var isStrokePlay = true
     @State var isSkins = false
@@ -49,12 +44,42 @@ struct StatsView: View {
     @State var skinsButtonHeight = 40.0
     @State var matchPlayButtonHeight = 40.0
     
+    @AppStorage("SP_GAMES_PLAYED") var SPGamesPlayed = 0
+    @AppStorage("SP_GAMES_WON") var SPGamesWon = 0
+    @AppStorage("SP_PAR") var SPPar = 0
+    @AppStorage("SP_BIRDIE") var SPBirdie = 0
+    @AppStorage("SP_EAGLE") var SPEagle = 0
+    @AppStorage("SP_ALBATROSS") var SPAlbatross = 0
+    @AppStorage("SP_BOGEY") var SPBogey = 0
+    @AppStorage("SP_DOUBLE_BOGEY") var SPDoubleBogey = 0
+    @AppStorage("SP_TRIPLE_BOGEY") var SPTripleBogey = 0
+    @AppStorage("SP_QUADRUPLE_BOGEY") var SPQuadrupleBogey = 0
+    
+    @AppStorage("SKINS_GAMES_PLAYED") var SkinsGamesPlayed = 0
+    @AppStorage("SKINS_GAMES_WON") var SkinsGamesWon = 0
+    @AppStorage("SKINS_PAR") var SkinsPar = 0
+    @AppStorage("SKINS_BIRDIE") var SkinsBirdie = 0
+    @AppStorage("SKINS_EAGLE") var SkinsEagle = 0
+    @AppStorage("SKINS_ALBATROSS") var SkinsAlbatross = 0
+    @AppStorage("SKINS_BOGEY") var SkinsBogey = 0
+    @AppStorage("SKINS_DOUBLE_BOGEY") var SkinsDoubleBogey = 0
+    @AppStorage("SKINS_TRIPLE_BOGEY") var SkinsTripleBogey = 0
+    @AppStorage("SKINS_QUADRUPLE_BOGEY") var SkinsQuadrupleBogey = 0
+    
+    @AppStorage("MP_GAMES_PLAYED") var MPGamesPlayed = 0
+    @AppStorage("MP_GAMES_WON") var MPGamesWon = 0
+    @AppStorage("MP_PAR") var MPPar = 0
+    @AppStorage("MP_BIRDIE") var MPBirdie = 0
+    @AppStorage("MP_EAGLE") var MPEagle = 0
+    @AppStorage("MP_ALBATROSS") var MPAlbatross = 0
+    @AppStorage("MP_BOGEY") var MPBogey = 0
+    @AppStorage("MP_DOUBLE_BOGEY") var MPDoubleBogey = 0
+    @AppStorage("MP_TRIPLE_BOGEY") var MPTripleBogey = 0
+    @AppStorage("MP_QUADRUPLE_BOGEY") var MPQuadrupleBogey = 0
+    
     var body: some View {
        NavigationStack{
-            
-            // vstack for view
             VStack{
-                // hstack for stat type buttons
                 HStack{
                         Menu{
                             NavigationLink(destination: StatInfoView()){
@@ -160,27 +185,27 @@ struct StatsView: View {
                     HStack{
                         VStack{
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPGamesPlayed)).font(.system(size: 30))
                                 Text("Games played")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPPar)).font(.system(size: 30))
                                 Text("Par")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPEagle)).font(.system(size: 30))
                                 Text("Eagle")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPBogey)).font(.system(size: 30))
                                 Text("Bogey")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPTripleBogey)).font(.system(size: 30))
                                 Text("Triple Bogey")
                             }
                             Spacer()
@@ -191,27 +216,27 @@ struct StatsView: View {
                         
                         VStack{
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPGamesWon)).font(.system(size: 30))
                                 Text("Games won")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPBirdie)).font(.system(size: 30))
                                 Text("Birdie")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPAlbatross)).font(.system(size: 30))
                                 Text("Albatross")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPDoubleBogey)).font(.system(size: 30))
                                 Text("Double Bogey")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SPQuadrupleBogey)).font(.system(size: 30))
                                 Text("Quadruple Bogey")
                             }
                             Spacer()
@@ -223,27 +248,27 @@ struct StatsView: View {
                     HStack{
                         VStack{
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsGamesPlayed)).font(.system(size: 30))
                                 Text("Games played")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsPar)).font(.system(size: 30))
                                 Text("Par")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsEagle)).font(.system(size: 30))
                                 Text("Eagle")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsBogey)).font(.system(size: 30))
                                 Text("Bogey")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsTripleBogey)).font(.system(size: 30))
                                 Text("Triple Bogey")
                             }
                             Spacer()
@@ -254,27 +279,27 @@ struct StatsView: View {
                         
                         VStack{
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsGamesWon)).font(.system(size: 30))
                                 Text("Games won")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsBirdie)).font(.system(size: 30))
                                 Text("Birdie")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsAlbatross)).font(.system(size: 30))
                                 Text("Albatross")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsDoubleBogey)).font(.system(size: 30))
                                 Text("Double Bogey")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(SkinsQuadrupleBogey)).font(.system(size: 30))
                                 Text("Quadruple Bogey")
                             }
                             Spacer()
@@ -287,27 +312,27 @@ struct StatsView: View {
                     HStack{
                         VStack{
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPGamesPlayed)).font(.system(size: 30))
                                 Text("Games played")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPPar)).font(.system(size: 30))
                                 Text("Par")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPEagle)).font(.system(size: 30))
                                 Text("Eagle")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPBogey)).font(.system(size: 30))
                                 Text("Bogey")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPTripleBogey)).font(.system(size: 30))
                                 Text("Triple Bogey")
                             }
                             Spacer()
@@ -318,27 +343,27 @@ struct StatsView: View {
                         
                         VStack{
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPGamesWon)).font(.system(size: 30))
                                 Text("Games won")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPBirdie)).font(.system(size: 30))
                                 Text("Birdie")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPAlbatross)).font(.system(size: 30))
                                 Text("Albatross")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPDoubleBogey)).font(.system(size: 30))
                                 Text("Double Bogey")
                             }
                             Spacer()
                             VStack{
-                                Text("200").font(.system(size: 30))
+                                Text(String(MPQuadrupleBogey)).font(.system(size: 30))
                                 Text("Quadruple Bogey")
                             }
                             Spacer()
@@ -350,11 +375,65 @@ struct StatsView: View {
             }
         }
     }
+    
+    func updateSPStatistics(gamesPlayed: Int, gamesWon: Int, par: Int, birdie: Int, eagle: Int, albatross: Int, bogey: Int, doubleBogey: Int, tripleBogey: Int, quadrupleBogey: Int) -> Void{
+        
+        SPGamesPlayed += gamesPlayed
+        SPGamesWon += gamesWon
+        SPPar += par
+        SPBirdie += birdie
+        SPEagle += eagle
+        SPAlbatross += albatross
+        SPBogey += bogey
+        SPDoubleBogey += doubleBogey
+        SPTripleBogey += tripleBogey
+        SPQuadrupleBogey += quadrupleBogey
+    }
+    
+    func updateSkinsStatistics(gamesPlayed: Int, gamesWon: Int, par: Int, birdie: Int, eagle: Int, albatross: Int, bogey: Int, doubleBogey: Int, tripleBogey: Int, quadrupleBogey: Int) -> Void{
+        
+        SkinsGamesPlayed += gamesPlayed
+        SkinsGamesWon += gamesWon
+        SkinsPar += par
+        SkinsBirdie += birdie
+        SkinsEagle += eagle
+        SkinsAlbatross += albatross
+        SkinsBogey += bogey
+        SkinsDoubleBogey += doubleBogey
+        SkinsTripleBogey += tripleBogey
+        SkinsQuadrupleBogey += quadrupleBogey
+    }
+    
+    func updateMPStatistics(gamesPlayed: Int, gamesWon: Int, par: Int, birdie: Int, eagle: Int, albatross: Int, bogey: Int, doubleBogey: Int, tripleBogey: Int, quadrupleBogey: Int) -> Void{
+        
+        MPGamesPlayed += gamesPlayed
+        MPGamesWon += gamesWon
+        MPPar += par
+        MPBirdie += birdie
+        MPEagle += eagle
+        MPAlbatross += albatross
+        MPBogey += bogey
+        MPDoubleBogey += doubleBogey
+        MPTripleBogey += tripleBogey
+        MPQuadrupleBogey += quadrupleBogey
+    }
+    
+    func resetSPStatistics() -> Void{
+        SPGamesPlayed = 0
+        SPGamesWon = 0
+        SPPar = 0
+        SPBirdie = 0
+        SPEagle = 0
+        SPAlbatross = 0
+        SPBogey = 0
+        SPDoubleBogey = 0
+        SPTripleBogey = 0
+        SPQuadrupleBogey = 0
+    }
 }
 
 
 // MARK: -
-// STRUCT: displays simulator for preview
 struct StatsView_Previews: PreviewProvider {
     static var previews: some View {
         StatsView()

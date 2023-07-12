@@ -44,7 +44,7 @@ struct SPParForHole: View{
                         Text(String(par) ).fontDesign(.rounded).font(.system(size: 30)).bold().foregroundColor(.black)
                         
                         
-                    }.frame(width: 120, height: 100)
+                    }.frame(width: 100, height: 100)
                     
                     Button(action:{
                         par += 1
@@ -261,7 +261,7 @@ struct SPHoleGamePlay: View {
         } else if playerNum == 4{
             return playerFourStrokes
         } else {
-            return 1000
+            return 0
         }
     }
     
@@ -562,7 +562,7 @@ struct SPPreviousHoleStats: View{
 }
 struct SPHoleGamePlay_Previews: PreviewProvider {
     static var previews: some View {
-        SPGameScoreCard()
+        SPHoleGamePlay()
     }
 }
 

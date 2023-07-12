@@ -8,6 +8,17 @@
 import SwiftUI
 
 var numOfPlayers = 0
+var personalPlayer = 1
+
+var playerOneButtonDisabled = true
+var playerTwoButtonDisabled = true
+var playerThreeButtonDisabled = true
+var playerFourButtonDisabled = true
+
+var playerOneButtonColor = Color.white
+var playerTwoButtonColor = Color.white
+var playerThreeButtonColor = Color.white
+var playerFourButtonColor = Color.white
 
 struct SPPlayerCount: View {
     
@@ -36,6 +47,7 @@ struct SPPlayerCount: View {
                         buttonThreeColor = Color.white
                         buttonFourColor = Color.white
                         continueButtonColor = Color.green
+                        disablePlayerOptions()
                     }, label: {
                         ZStack{
                             Rectangle().frame(width: 100, height: 100).cornerRadius(5).shadow(radius: 3).foregroundColor(buttonOneColor)
@@ -52,6 +64,7 @@ struct SPPlayerCount: View {
                         buttonThreeColor = Color.green
                         buttonFourColor = Color.white
                         continueButtonColor = Color.green
+                        disablePlayerOptions()
                     }, label: {
                         ZStack{
                             Rectangle().frame(width: 100, height: 100).cornerRadius(5).shadow(radius: 3).foregroundColor(buttonThreeColor)
@@ -73,6 +86,7 @@ struct SPPlayerCount: View {
                         buttonThreeColor = Color.white
                         buttonFourColor = Color.white
                         continueButtonColor = Color.green
+                        disablePlayerOptions()
                     }, label: {
                         ZStack{
                             Rectangle().frame(width: 100, height: 100).cornerRadius(5).shadow(radius: 3).foregroundColor(buttonTwoColor)
@@ -89,6 +103,7 @@ struct SPPlayerCount: View {
                         buttonThreeColor = Color.white
                         buttonFourColor = Color.green
                         continueButtonColor = Color.green
+                        disablePlayerOptions()
                     }, label: {
                         ZStack{
                             Rectangle().frame(width: 100, height: 100).cornerRadius(5).shadow(radius: 3).foregroundColor(buttonFourColor)
@@ -100,7 +115,7 @@ struct SPPlayerCount: View {
             }
             
             
-            NavigationLink(destination: SPHoleCount()){
+            NavigationLink(destination: SPPersonalPlayer()){
                 
                 ZStack{
                     Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(continueButtonColor)
@@ -117,11 +132,123 @@ struct SPPlayerCount: View {
         return numOfPlayers
     }
     
+    func disablePlayerOptions() -> Void{
+        if numOfPlayers == 1{
+            playerOneButtonDisabled = false
+            playerTwoButtonDisabled = true
+            playerThreeButtonDisabled = true
+            playerFourButtonDisabled = true
+        } else if numOfPlayers == 2{
+            playerOneButtonDisabled = true
+            playerTwoButtonDisabled = false
+            playerThreeButtonDisabled = true
+            playerFourButtonDisabled = true
+        } else if numOfPlayers == 3{
+            playerOneButtonDisabled = true
+            playerTwoButtonDisabled = true
+            playerThreeButtonDisabled = false
+            playerFourButtonDisabled = true
+        } else if numOfPlayers == 4{
+            playerOneButtonDisabled = true
+            playerTwoButtonDisabled = true
+            playerThreeButtonDisabled = true
+            playerFourButtonDisabled = false
+        }
+    }
+}
+
+
+struct SPPersonalPlayer: View{
+    
+    @State var continueButtonColor = Color.white
+    @State var continueButtonDisabled = true
+    
+    var body: some View{
+        VStack{
+            Text("Select your player").fontDesign(.rounded).font(.system(size: 30)).bold().foregroundColor(.black).padding()
+            
+            Button(action: {
+                personalPlayer = 1
+                playerOneButtonColor = Color.green
+                playerTwoButtonColor = Color.white
+                playerThreeButtonColor = Color.white
+                playerFourButtonColor = Color.white
+                continueButtonColor = Color.green
+                continueButtonDisabled = false
+            }, label: {
+                ZStack{
+                    Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(playerOneButtonColor)
+                    Text("Player 1").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
+                    
+                }
+            }).padding().disabled(playerOneButtonDisabled)
+            
+            Button(action: {
+                personalPlayer = 2
+                playerOneButtonColor = Color.white
+                playerTwoButtonColor = Color.green
+                playerThreeButtonColor = Color.white
+                playerFourButtonColor = Color.white
+                continueButtonColor = Color.green
+                continueButtonDisabled = false
+            }, label: {
+                ZStack{
+                    Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(playerTwoButtonColor)
+                    Text("Player 2").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
+                    
+                }
+            }).padding().disabled(playerTwoButtonDisabled)
+            
+            Button(action: {
+                personalPlayer = 3
+                playerOneButtonColor = Color.white
+                playerTwoButtonColor = Color.white
+                playerThreeButtonColor = Color.green
+                playerFourButtonColor = Color.white
+                continueButtonColor = Color.green
+                continueButtonDisabled = false
+            }, label: {
+                ZStack{
+                    Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(playerThreeButtonColor)
+                    Text("Player 3").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
+                    
+                }
+            }).padding().disabled(playerThreeButtonDisabled)
+            
+            Button(action: {
+                personalPlayer = 4
+                playerOneButtonColor = Color.white
+                playerTwoButtonColor = Color.white
+                playerThreeButtonColor = Color.white
+                playerFourButtonColor = Color.green
+                continueButtonColor = Color.green
+                continueButtonDisabled = false
+            }, label: {
+                ZStack{
+                    Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(playerFourButtonColor)
+                    Text("Player 4").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
+                    
+                }
+            }).padding().disabled(playerFourButtonDisabled)
+            
+            
+            NavigationLink(destination: SPHoleCount()){
+                
+                ZStack{
+                    Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(continueButtonColor)
+                    Text("Continue").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
+                    
+                }
+            }.padding(.top, 100).disabled(continueButtonDisabled)
+            
+            
+        }.frame(width: 350, height: 750)
+    }
 }
 
 struct SPPlayerCount_Previews: PreviewProvider {
     static var previews: some View {
-        SPPlayerCount()
+        SPPersonalPlayer()
     }
 }
 

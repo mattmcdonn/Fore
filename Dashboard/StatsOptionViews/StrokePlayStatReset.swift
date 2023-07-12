@@ -22,6 +22,7 @@ struct StrokePlayStatReset: View {
             Button(action: {
                 resetDisabled = true
                 resetButtonColor = Color.gray
+                StatsView().resetSPStatistics()
             }, label: {
                 Text("Reset").frame(width: 100, height: 40).foregroundColor(.white).background(resetButtonColor).cornerRadius(5).disabled(resetDisabled)
             }).padding()
@@ -33,6 +34,7 @@ struct StrokePlayStatReset: View {
         }
         
     }
+    
 }
 struct StrokePlayStatReset_Previews: PreviewProvider {
     static var previews: some View {
