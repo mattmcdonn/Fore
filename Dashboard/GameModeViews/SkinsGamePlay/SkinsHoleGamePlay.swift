@@ -1,17 +1,17 @@
 //
-//  SPHoleGamePlay.swift
+//  SkinsHoleGamePlay.swift
 //  Fore
 //
-//  Created by Matthew McDonald on 2023-06-07.
+//  Created by Matthew McDonald on 2023-07-14.
 //
 
 import SwiftUI
 
-var holeNum = 1
-var gameDone = false
-var parNum = 0
+var skinsHoleNum = 1
+var skinsGameDone = false
+var skinsParNum = 0
 
-struct SPParForHole: View{
+struct SkinsParForHole: View{
     
     @State var par = 0
     @State var noParSelected = true
@@ -91,12 +91,12 @@ struct SPParForHole: View{
 
 
 
-var playerOneStrokes = 0
-var playerTwoStrokes = 0
-var playerThreeStrokes = 0
-var playerFourStrokes = 0
+var skinsPlayerOneStrokes = 0
+var skinsPlayerTwoStrokes = 0
+var skinsPlayerThreeStrokes = 0
+var skinsPlayerFourStrokes = 0
 
-struct SPHoleGamePlay: View {
+struct SkinsHoleGamePlay: View {
 
     @State var numOfPlayers = SPPlayerCount().getNumOfPlayers()
     @State var numOfHoles = SPHoleCount().getNumOfHoles()
@@ -469,7 +469,7 @@ struct SPHoleGamePlay: View {
     }
 }
 
-struct SPEndGame: View{
+struct SkinsEndGame: View{
     
     var body: some View {
         VStack{
@@ -490,7 +490,7 @@ struct SPEndGame: View{
     }
 }
 
-struct SPPreviousHoleStats: View{
+struct SkinsPreviousHoleStats: View{
     
     
     var body: some View{
@@ -565,7 +565,7 @@ struct SPPreviousHoleStats: View{
 
 
 
-struct viewTotalPlayerScores: View{
+struct SkinsViewTotalPlayerScores: View{
     var body: some View{
         
             NavigationStack{
@@ -624,10 +624,10 @@ struct viewTotalPlayerScores: View{
             }.navigationBarBackButtonHidden(true)
         }
 }
-struct SPHoleGamePlay_Previews: PreviewProvider {
+
+
+struct SkinsHoleGamePlay_Previews: PreviewProvider {
     static var previews: some View {
-        viewTotalPlayerScores()
+        SkinsHoleGamePlay()
     }
 }
-
-

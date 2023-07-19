@@ -34,6 +34,7 @@ struct PlayView: View {
                                 
                                 Spacer()
                             }
+                            
                             Spacer()
                             Rectangle().foregroundColor(.black).frame(width: 290, height: 10).cornerRadius(5)
                             
@@ -42,7 +43,7 @@ struct PlayView: View {
                     }
                 }.padding()
                 
-                NavigationLink(destination: SPPlayerCount()){
+                NavigationLink(destination: SkinsPlayerCount()){
                     ZStack{
                         Rectangle().foregroundColor(Color.white).frame(width: 320, height: 200).cornerRadius(5).shadow(radius: 5)
                         VStack{
@@ -61,6 +62,7 @@ struct PlayView: View {
                                 
                                 Spacer()
                             }
+                            
                             Spacer()
                             Rectangle().foregroundColor(.green).frame(width: 290, height: 10).cornerRadius(5)
                             
@@ -88,6 +90,7 @@ struct PlayView: View {
                                 
                                 Spacer()
                             }
+                            
                             Spacer()
                             Rectangle().foregroundColor(.blue).frame(width: 290, height: 10).cornerRadius(5)
                             

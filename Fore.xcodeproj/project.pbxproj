@@ -18,6 +18,14 @@
 		822FE6992A2DB13C008FB355 /* GolfCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FE6982A2DB13C008FB355 /* GolfCoursesView.swift */; };
 		822FE69B2A2DB415008FB355 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822FE69A2A2DB415008FB355 /* AchievementsView.swift */; };
 		8242091B2A5C8DBF00A5CA2C /* SPGameScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242091A2A5C8DBF00A5CA2C /* SPGameScoreCard.swift */; };
+		8242091E2A61E2D400A5CA2C /* SkinsPlayerCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242091D2A61E2D400A5CA2C /* SkinsPlayerCount.swift */; };
+		824209202A61E37400A5CA2C /* SkinsHoleCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242091F2A61E37400A5CA2C /* SkinsHoleCount.swift */; };
+		824209222A61E3A800A5CA2C /* SkinsHoleGamePlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824209212A61E3A800A5CA2C /* SkinsHoleGamePlay.swift */; };
+		824209242A61E3C000A5CA2C /* SkinsGolfPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824209232A61E3C000A5CA2C /* SkinsGolfPlayer.swift */; };
+		824209262A61E3D500A5CA2C /* SkinsGolfHole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824209252A61E3D500A5CA2C /* SkinsGolfHole.swift */; };
+		824209282A61E3EE00A5CA2C /* SkinsGolfGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824209272A61E3EE00A5CA2C /* SkinsGolfGame.swift */; };
+		8242092A2A61E3FE00A5CA2C /* SkinsReviewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824209292A61E3FE00A5CA2C /* SkinsReviewSetup.swift */; };
+		8242092C2A61E40B00A5CA2C /* SkinsGameScoreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8242092B2A61E40B00A5CA2C /* SkinsGameScoreCard.swift */; };
 		825EDC1B2A32815A003A8800 /* SPGolfPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EDC1A2A32815A003A8800 /* SPGolfPlayer.swift */; };
 		825EDC1D2A328179003A8800 /* SPGolfHole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EDC1C2A328179003A8800 /* SPGolfHole.swift */; };
 		825EDC1F2A32B49F003A8800 /* SPGolfGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825EDC1E2A32B49F003A8800 /* SPGolfGame.swift */; };
@@ -47,6 +55,14 @@
 		822FE6982A2DB13C008FB355 /* GolfCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolfCoursesView.swift; sourceTree = "<group>"; };
 		822FE69A2A2DB415008FB355 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		8242091A2A5C8DBF00A5CA2C /* SPGameScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGameScoreCard.swift; sourceTree = "<group>"; };
+		8242091D2A61E2D400A5CA2C /* SkinsPlayerCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsPlayerCount.swift; sourceTree = "<group>"; };
+		8242091F2A61E37400A5CA2C /* SkinsHoleCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsHoleCount.swift; sourceTree = "<group>"; };
+		824209212A61E3A800A5CA2C /* SkinsHoleGamePlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsHoleGamePlay.swift; sourceTree = "<group>"; };
+		824209232A61E3C000A5CA2C /* SkinsGolfPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsGolfPlayer.swift; sourceTree = "<group>"; };
+		824209252A61E3D500A5CA2C /* SkinsGolfHole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsGolfHole.swift; sourceTree = "<group>"; };
+		824209272A61E3EE00A5CA2C /* SkinsGolfGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsGolfGame.swift; sourceTree = "<group>"; };
+		824209292A61E3FE00A5CA2C /* SkinsReviewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsReviewSetup.swift; sourceTree = "<group>"; };
+		8242092B2A61E40B00A5CA2C /* SkinsGameScoreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinsGameScoreCard.swift; sourceTree = "<group>"; };
 		825EDC1A2A32815A003A8800 /* SPGolfPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGolfPlayer.swift; sourceTree = "<group>"; };
 		825EDC1C2A328179003A8800 /* SPGolfHole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGolfHole.swift; sourceTree = "<group>"; };
 		825EDC1E2A32B49F003A8800 /* SPGolfGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPGolfGame.swift; sourceTree = "<group>"; };
@@ -132,6 +148,21 @@
 			path = StatsOptionViews;
 			sourceTree = "<group>";
 		};
+		8242091C2A60829B00A5CA2C /* SkinsGamePlay */ = {
+			isa = PBXGroup;
+			children = (
+				8242091D2A61E2D400A5CA2C /* SkinsPlayerCount.swift */,
+				8242091F2A61E37400A5CA2C /* SkinsHoleCount.swift */,
+				824209212A61E3A800A5CA2C /* SkinsHoleGamePlay.swift */,
+				824209232A61E3C000A5CA2C /* SkinsGolfPlayer.swift */,
+				824209252A61E3D500A5CA2C /* SkinsGolfHole.swift */,
+				824209272A61E3EE00A5CA2C /* SkinsGolfGame.swift */,
+				824209292A61E3FE00A5CA2C /* SkinsReviewSetup.swift */,
+				8242092B2A61E40B00A5CA2C /* SkinsGameScoreCard.swift */,
+			);
+			path = SkinsGamePlay;
+			sourceTree = "<group>";
+		};
 		82FA561D2A3100C9004CAD8F /* SPGamePlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +181,7 @@
 		82FDBFE22A2FD26B0018F462 /* GameModeViews */ = {
 			isa = PBXGroup;
 			children = (
+				8242091C2A60829B00A5CA2C /* SkinsGamePlay */,
 				82FA561D2A3100C9004CAD8F /* SPGamePlay */,
 				82FDBFE62A3040570018F462 /* GameInstructionViews */,
 			);
@@ -251,18 +283,25 @@
 				820589DF2A2A7ABE00217BF1 /* Dashboard.swift in Sources */,
 				82FDBFEC2A3048B70018F462 /* MPInstructions.swift in Sources */,
 				82FDBFEA2A30485E0018F462 /* SkinsInstructions.swift in Sources */,
+				824209202A61E37400A5CA2C /* SkinsHoleCount.swift in Sources */,
 				82FDBFE12A2E69740018F462 /* AllStatReset.swift in Sources */,
 				820589D02A2A749500217BF1 /* ForeApp.swift in Sources */,
+				824209282A61E3EE00A5CA2C /* SkinsGolfGame.swift in Sources */,
+				824209222A61E3A800A5CA2C /* SkinsHoleGamePlay.swift in Sources */,
 				820589E52A2AA44E00217BF1 /* PlayView.swift in Sources */,
 				825EDC1B2A32815A003A8800 /* SPGolfPlayer.swift in Sources */,
+				8242091E2A61E2D400A5CA2C /* SkinsPlayerCount.swift in Sources */,
 				820589E32A2AA42F00217BF1 /* StatsView.swift in Sources */,
 				82FA561F2A31036A004CAD8F /* SPHoleCount.swift in Sources */,
+				8242092C2A61E40B00A5CA2C /* SkinsGameScoreCard.swift in Sources */,
 				82FDBFDD2A2E693B0018F462 /* SkinStatReset.swift in Sources */,
 				8242091B2A5C8DBF00A5CA2C /* SPGameScoreCard.swift in Sources */,
 				822B048E2A415E6600ABA0A2 /* SPReviewSetup.swift in Sources */,
 				82FDBFE52A2FD34A0018F462 /* SPPlayerCount.swift in Sources */,
 				822FE69B2A2DB415008FB355 /* AchievementsView.swift in Sources */,
 				82FDBFD92A2E5A1B0018F462 /* StatInfoView.swift in Sources */,
+				824209262A61E3D500A5CA2C /* SkinsGolfHole.swift in Sources */,
+				8242092A2A61E3FE00A5CA2C /* SkinsReviewSetup.swift in Sources */,
 				82FDBFE82A3047420018F462 /* SPInstructions.swift in Sources */,
 				82FDBFDF2A2E69560018F462 /* MatchPlayStatReset.swift in Sources */,
 				82FDBFDB2A2E5A820018F462 /* StrokePlayStatReset.swift in Sources */,
@@ -271,6 +310,7 @@
 				82FA56222A317BFB004CAD8F /* SPHoleGamePlay.swift in Sources */,
 				825EDC1D2A328179003A8800 /* SPGolfHole.swift in Sources */,
 				822FE6992A2DB13C008FB355 /* GolfCoursesView.swift in Sources */,
+				824209242A61E3C000A5CA2C /* SkinsGolfPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

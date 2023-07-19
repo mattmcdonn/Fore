@@ -1,18 +1,18 @@
 //
-//  SPGameScoreCard.swift
+//  SkinsGameScoreCard.swift
 //  Fore
 //
-//  Created by Matthew McDonald on 2023-07-10.
+//  Created by Matthew McDonald on 2023-07-14.
 //
 
 import SwiftUI
 
-var playerOneRectangleColor = Color.red
-var playerTwoRectangleColor = Color.yellow
-var playerThreeRectangleColor = Color.blue
-var playerFourRectangleColor = Color.green
+var SkinsPlayerOneRectangleColor = Color.red
+var SkinsPlayerTwoRectangleColor = Color.yellow
+var SkinsPlayerThreeRectangleColor = Color.blue
+var SkinsPlayerFourRectangleColor = Color.green
 
-struct SPGameScoreCard: View{
+struct SkinsGameScoreCard: View{
     
     @State var rectangleHeight = 35.0
     @State var rectangleWidth = 70.0
@@ -1181,8 +1181,8 @@ struct SPGameScoreCard: View{
     }
 }
 
-struct SPGameScoreCard_Previews: PreviewProvider {
+struct SkinsGameScoreCard_Previews: PreviewProvider {
     static var previews: some View {
-        SPGameScoreCard()
+        SkinsGameScoreCard()
     }
 }

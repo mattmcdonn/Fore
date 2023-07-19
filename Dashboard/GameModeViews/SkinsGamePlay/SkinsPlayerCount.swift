@@ -1,21 +1,21 @@
 //
-//  StrokePlayGameView.swift
+//  SkinsPlayerCount.swift
 //  Fore
 //
-//  Created by Matthew McDonald on 2023-06-06.
+//  Created by Matthew McDonald on 2023-07-14.
 //
 
 import SwiftUI
 
-var SPNumOfPlayers = 0
-var SPPlayer = 1
+var SkinsNumOfPlayers = 0
+var SkinsPlayer = 1
 
-var SPPlayerOneButtonDisabled = true
-var SPPlayerTwoButtonDisabled = true
-var SPPlayerThreeButtonDisabled = true
-var SPPlayerFourButtonDisabled = true
+var SkinsPlayerOneButtonDisabled = true
+var SkinsPlayerTwoButtonDisabled = true
+var SkinsPlayerThreeButtonDisabled = true
+var SkinsPlayerFourButtonDisabled = true
 
-struct SPPlayerCount: View {
+struct SkinsPlayerCount: View {
     
     
     @State var noPlayersSelected = true
@@ -36,7 +36,7 @@ struct SPPlayerCount: View {
                 VStack{
                     Button(action: {
                         noPlayersSelected = false
-                        SPNumOfPlayers = 1
+                        SkinsNumOfPlayers = 1
                         buttonOneColor = Color.green
                         buttonTwoColor = Color.white
                         buttonThreeColor = Color.white
@@ -53,7 +53,7 @@ struct SPPlayerCount: View {
                     
                     Button(action: {
                         noPlayersSelected = false
-                        SPNumOfPlayers = 3
+                        SkinsNumOfPlayers = 3
                         buttonOneColor = Color.white
                         buttonTwoColor = Color.white
                         buttonThreeColor = Color.green
@@ -75,7 +75,7 @@ struct SPPlayerCount: View {
                 VStack{
                     Button(action: {
                         noPlayersSelected = false
-                        SPNumOfPlayers = 2
+                        SkinsNumOfPlayers = 2
                         buttonOneColor = Color.white
                         buttonTwoColor = Color.green
                         buttonThreeColor = Color.white
@@ -92,7 +92,7 @@ struct SPPlayerCount: View {
                     
                     Button(action: {
                         noPlayersSelected = false
-                        SPNumOfPlayers = 4
+                        SkinsNumOfPlayers = 4
                         buttonOneColor = Color.white
                         buttonTwoColor = Color.white
                         buttonThreeColor = Color.white
@@ -110,7 +110,7 @@ struct SPPlayerCount: View {
             }
             
             
-            NavigationLink(destination: SPPersonalPlayer()){
+            NavigationLink(destination: SkinsPersonalPlayer()){
                 
                 ZStack{
                     Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(continueButtonColor)
@@ -124,30 +124,30 @@ struct SPPlayerCount: View {
     }
     
     func getNumOfPlayers() -> Int{
-        return SPNumOfPlayers
+        return SkinsNumOfPlayers
     }
     
     func disablePlayerOptions() -> Void{
-        if SPNumOfPlayers == 1{
-            SPPlayerOneButtonDisabled = false
-            SPPlayerTwoButtonDisabled = true
-            SPPlayerThreeButtonDisabled = true
-            SPPlayerFourButtonDisabled = true
+        if SkinsNumOfPlayers == 1{
+            SkinsPlayerOneButtonDisabled = false
+            SkinsPlayerTwoButtonDisabled = true
+            SkinsPlayerThreeButtonDisabled = true
+            SkinsPlayerFourButtonDisabled = true
         } else if SPNumOfPlayers == 2{
-            SPPlayerOneButtonDisabled = false
-            SPPlayerTwoButtonDisabled = false
-            SPPlayerThreeButtonDisabled = true
-            SPPlayerFourButtonDisabled = true
+            SkinsPlayerOneButtonDisabled = false
+            SkinsPlayerTwoButtonDisabled = false
+            SkinsPlayerThreeButtonDisabled = true
+            SkinsPlayerFourButtonDisabled = true
         } else if SPNumOfPlayers == 3{
-            SPPlayerOneButtonDisabled = false
-            SPPlayerTwoButtonDisabled = false
-            SPPlayerThreeButtonDisabled = false
-            SPPlayerFourButtonDisabled = true
+            SkinsPlayerOneButtonDisabled = false
+            SkinsPlayerTwoButtonDisabled = false
+            SkinsPlayerThreeButtonDisabled = false
+            SkinsPlayerFourButtonDisabled = true
         } else if SPNumOfPlayers == 4{
-            SPPlayerOneButtonDisabled = false
-            SPPlayerTwoButtonDisabled = false
-            SPPlayerThreeButtonDisabled = false
-            SPPlayerFourButtonDisabled = false
+            SkinsPlayerOneButtonDisabled = false
+            SkinsPlayerTwoButtonDisabled = false
+            SkinsPlayerThreeButtonDisabled = false
+            SkinsPlayerFourButtonDisabled = false
         }
     }
 }
@@ -163,7 +163,7 @@ struct SPPlayerCount: View {
 
 
 
-struct SPPersonalPlayer: View{
+struct SkinsPersonalPlayer: View{
     
     @State var continueButtonColor = Color.white
     @State var continueButtonDisabled = true
@@ -178,7 +178,7 @@ struct SPPersonalPlayer: View{
             Text("Select your player").fontDesign(.rounded).font(.system(size: 30)).bold().foregroundColor(.black).padding()
             
             Button(action: {
-                SPPlayer = 1
+                SkinsPlayer = 1
                 playerOneButtonColor = Color.green
                 playerTwoButtonColor = Color.white
                 playerThreeButtonColor = Color.white
@@ -191,10 +191,10 @@ struct SPPersonalPlayer: View{
                     Text("Player 1").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
                     
                 }
-            }).padding().disabled(SPPlayerOneButtonDisabled)
+            }).padding().disabled(SkinsPlayerOneButtonDisabled)
             
             Button(action: {
-                SPPlayer = 2
+                SkinsPlayer = 2
                 playerOneButtonColor = Color.white
                 playerTwoButtonColor = Color.green
                 playerThreeButtonColor = Color.white
@@ -207,10 +207,10 @@ struct SPPersonalPlayer: View{
                     Text("Player 2").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
                     
                 }
-            }).padding().disabled(SPPlayerTwoButtonDisabled)
+            }).padding().disabled(SkinsPlayerTwoButtonDisabled)
             
             Button(action: {
-                SPPlayer = 3
+                SkinsPlayer = 3
                 playerOneButtonColor = Color.white
                 playerTwoButtonColor = Color.white
                 playerThreeButtonColor = Color.green
@@ -223,10 +223,10 @@ struct SPPersonalPlayer: View{
                     Text("Player 3").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
                     
                 }
-            }).padding().disabled(SPPlayerThreeButtonDisabled)
+            }).padding().disabled(SkinsPlayerThreeButtonDisabled)
             
             Button(action: {
-                SPPlayer = 4
+                SkinsPlayer = 4
                 playerOneButtonColor = Color.white
                 playerTwoButtonColor = Color.white
                 playerThreeButtonColor = Color.white
@@ -239,10 +239,10 @@ struct SPPersonalPlayer: View{
                     Text("Player 4").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
                     
                 }
-            }).padding().disabled(SPPlayerFourButtonDisabled)
+            }).padding().disabled(SkinsPlayerFourButtonDisabled)
             
             
-            NavigationLink(destination: SPHoleCount()){
+            NavigationLink(destination: SkinsHoleCount()){
                 
                 ZStack{
                     Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(continueButtonColor)
@@ -261,15 +261,8 @@ struct SPPersonalPlayer: View{
 
 
 
-
-
-
-
-
-
-struct SPPlayerCount_Previews: PreviewProvider {
+struct SkinsPlayerCount_Previews: PreviewProvider {
     static var previews: some View {
-        SPPersonalPlayer()
+        SkinsPlayerCount()
     }
 }
-
