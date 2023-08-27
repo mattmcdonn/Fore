@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-var playerOneRectangleColor = Color.red
-var playerTwoRectangleColor = Color.yellow
-var playerThreeRectangleColor = Color.blue
-var playerFourRectangleColor = Color.green
+var SPPlayerOneRectangleColor = Color.blue
+var SPPlayerTwoRectangleColor = Color.teal
+var SPPlayerThreeRectangleColor = Color.blue
+var SPPlayerFourRectangleColor = Color.teal
 
 struct SPGameScoreCard: View{
     
@@ -22,7 +22,7 @@ struct SPGameScoreCard: View{
     @State var leftButtonDisabled = true
     @State var rightButtonDisabled = false
     @State var leftButtonColor = Color.gray
-    @State var rightButtonColor =  Color.green
+    @State var rightButtonColor =  Color.yellow
     
     @State var saveButtonMessage = "Save my score"
     @State var saveButtonColor = Color.blue
@@ -41,7 +41,7 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("#").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
@@ -52,26 +52,26 @@ struct SPGameScoreCard: View{
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(SP_PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(SP_PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(SP_PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(SP_PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -83,37 +83,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("1").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 0).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 0).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -125,37 +125,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("2").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 1).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 1).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -167,37 +167,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("3").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 2).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 2).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -209,37 +209,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("4").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 3).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 3).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -251,37 +251,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("5").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 4).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 4).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -293,37 +293,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("6").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 5).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 5).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -335,37 +335,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("7").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 6).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 6).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -377,37 +377,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("8").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 7).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 7).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -419,37 +419,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("9").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 8).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 8).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -467,7 +467,7 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("#").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
@@ -478,26 +478,26 @@ struct SPGameScoreCard: View{
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(SP_PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(SP_PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(SP_PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(SP_PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -509,37 +509,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("10").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 9).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 9).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -551,37 +551,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("11").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 10).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 10).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -593,37 +593,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("12").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 11).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 11).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -635,37 +635,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("13").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 12).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 12).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -677,37 +677,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("14").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 13).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 13).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -719,37 +719,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("15").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 14).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 14).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -761,37 +761,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("16").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 15).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 15).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -803,37 +803,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("17").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 16).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 16).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -845,37 +845,37 @@ struct SPGameScoreCard: View{
                         HStack{
                             
                             ZStack{
-                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.green).cornerRadius(5)
+                                Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.yellow).cornerRadius(5)
                                 Text("18").foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 17).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 17).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SPPlayerOneRectangleColor)
+                                    Text(String(SP_PLAYER_ONE.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerTwoRectangleColor)
+                                    Text(String(SP_PLAYER_TWO.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SPPlayerThreeRectangleColor)
+                                    Text(String(SP_PLAYER_THREE.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SPPlayerFourRectangleColor)
+                                    Text(String(SP_PLAYER_FOUR.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -926,7 +926,7 @@ struct SPGameScoreCard: View{
                 NavigationLink(destination: PlayView().onAppear(perform: resetGame)){
                     
                     ZStack{
-                        Rectangle().frame(width: 240, height: 40).cornerRadius(5).shadow(radius: 3).foregroundColor(.green)
+                        Rectangle().frame(width: 240, height: 40).cornerRadius(5).shadow(radius: 3).foregroundColor(.yellow)
                         Text("Done").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
                         
                     }
@@ -956,10 +956,10 @@ struct SPGameScoreCard: View{
             var holeStrokes = 0
             var holePar = 0
             
-            for i in 0...(numOfHoles - 1){
+            for i in 0...(SPNumOfHoles - 1){
                     
-                    holeStrokes = PLAYER_ONE.getGolfHole(holeIndex: i).getPlayerStrokes()
-                    holePar = PLAYER_ONE.getGolfHole(holeIndex: i).getParNumber()
+                    holeStrokes = SP_PLAYER_ONE.getGolfHole(holeIndex: i).getPlayerStrokes()
+                    holePar = SP_PLAYER_ONE.getGolfHole(holeIndex: i).getParNumber()
                     
                     if holeStrokes - holePar == 4{
                         quadrupleBogey += 1
@@ -989,10 +989,10 @@ struct SPGameScoreCard: View{
             var holeStrokes = 0
             var holePar = 0
             
-            for i in 0...(numOfHoles - 1){
+            for i in 0...(SPNumOfHoles - 1){
                 
-                holeStrokes = PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
-                holePar = PLAYER_TWO.getGolfHole(holeIndex: i).getParNumber()
+                holeStrokes = SP_PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
+                holePar = SP_PLAYER_TWO.getGolfHole(holeIndex: i).getParNumber()
                 
                 if holeStrokes - holePar == 4{
                     quadrupleBogey += 1
@@ -1022,10 +1022,10 @@ struct SPGameScoreCard: View{
             var holeStrokes = 0
             var holePar = 0
             
-            for i in 0...(numOfHoles - 1){
+            for i in 0...(SPNumOfHoles - 1){
                 
-                holeStrokes = PLAYER_THREE.getGolfHole(holeIndex: i).getPlayerStrokes()
-                holePar = PLAYER_THREE.getGolfHole(holeIndex: i).getParNumber()
+                holeStrokes = SP_PLAYER_THREE.getGolfHole(holeIndex: i).getPlayerStrokes()
+                holePar = SP_PLAYER_THREE.getGolfHole(holeIndex: i).getParNumber()
                 
                 if holeStrokes - holePar == 4{
                     quadrupleBogey += 1
@@ -1055,10 +1055,10 @@ struct SPGameScoreCard: View{
             var holeStrokes = 0
             var holePar = 0
             
-            for i in 0...(numOfHoles - 1){
+            for i in 0...(SPNumOfHoles - 1){
                 
-                holeStrokes = PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
-                holePar = PLAYER_TWO.getGolfHole(holeIndex: i).getParNumber()
+                holeStrokes = SP_PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
+                holePar = SP_PLAYER_TWO.getGolfHole(holeIndex: i).getParNumber()
                 
                 if holeStrokes - holePar == 4{
                     quadrupleBogey += 1
@@ -1125,32 +1125,32 @@ struct SPGameScoreCard: View{
     
     func playerOneTotalStrokes() -> Int{
         var totalStrokes = 0
-        for i in 0...(numOfHoles - 1){
-            totalStrokes += PLAYER_ONE.getGolfHole(holeIndex: i).getPlayerStrokes()
+        for i in 0...(SPNumOfHoles - 1){
+            totalStrokes += SP_PLAYER_ONE.getGolfHole(holeIndex: i).getPlayerStrokes()
         }
         return totalStrokes
     }
     
     func playerTwoTotalStrokes() -> Int{
         var totalStrokes = 0
-        for i in 0...(numOfHoles - 1){
-            totalStrokes += PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
+        for i in 0...(SPNumOfHoles - 1){
+            totalStrokes += SP_PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
         }
         return totalStrokes
     }
     
     func playerThreeTotalStrokes() -> Int{
         var totalStrokes = 0
-        for i in 0...(numOfHoles - 1){
-            totalStrokes += PLAYER_THREE.getGolfHole(holeIndex: i).getPlayerStrokes()
+        for i in 0...(SPNumOfHoles - 1){
+            totalStrokes += SP_PLAYER_THREE.getGolfHole(holeIndex: i).getPlayerStrokes()
         }
         return totalStrokes
     }
     
     func playerFourTotalStrokes() -> Int{
         var totalStrokes = 0
-        for i in 0...(numOfHoles - 1){
-            totalStrokes += PLAYER_FOUR.getGolfHole(holeIndex: i).getPlayerStrokes()
+        for i in 0...(SPNumOfHoles - 1){
+            totalStrokes += SP_PLAYER_FOUR.getGolfHole(holeIndex: i).getPlayerStrokes()
         }
         return totalStrokes
     }
@@ -1162,20 +1162,20 @@ struct SPGameScoreCard: View{
             pageNum = 2
             leftButtonDisabled = false
             rightButtonDisabled = true
-            leftButtonColor = Color.green
+            leftButtonColor = Color.yellow
             rightButtonColor = Color.gray
         } else if pageNum == 2{
             pageNum = 1
             leftButtonDisabled = true
             rightButtonDisabled = false
             leftButtonColor = Color.gray
-            rightButtonColor = Color.green
+            rightButtonColor = Color.yellow
         }
     }
     
     func resetGame() -> Void{
-        holeNum = 1
-        gameDone = false
+        SPHoleNum = 1
+        SPGameDone = false
         SPHoleGamePlay().resetHole()
         
     }

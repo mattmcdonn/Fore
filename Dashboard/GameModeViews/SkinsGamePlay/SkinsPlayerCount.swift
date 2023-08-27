@@ -150,6 +150,14 @@ struct SkinsPlayerCount: View {
             SkinsPlayerFourButtonDisabled = false
         }
     }
+    
+    func isOnePlayer() -> Bool{
+        if SkinsNumOfPlayers == 1{
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 

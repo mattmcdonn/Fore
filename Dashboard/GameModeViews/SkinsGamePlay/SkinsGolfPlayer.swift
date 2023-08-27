@@ -10,10 +10,12 @@ import Foundation
 class SkinsGolfPlayer{
     var playerName: String
     var golfHoles: [SkinsGolfHole]
+    var skinsWon: Int
     
-    init(playerName: String, golfHoles: [SkinsGolfHole]) {
+    init(playerName: String, golfHoles: [SkinsGolfHole], skinsWon: Int) {
         self.playerName = playerName
         self.golfHoles = golfHoles
+        self.skinsWon = skinsWon
     }
     
     func getPlayerName() -> String{
@@ -22,6 +24,18 @@ class SkinsGolfPlayer{
     
     func setPlayerName(newName: String){
         self.playerName = newName
+    }
+    
+    func getSkinsWon() -> Int{
+        return self.skinsWon
+    }
+    
+    func addToSkinsWon() -> Void{
+        self.skinsWon += 1
+    }
+    
+    func setSkinsWon(newInt: Int) -> Void{
+        self.skinsWon = newInt
     }
     
     func addGolfHole(golfHole: SkinsGolfHole){

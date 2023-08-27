@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-var SkinsPlayerOneRectangleColor = Color.red
-var SkinsPlayerTwoRectangleColor = Color.yellow
+var SkinsPlayerOneRectangleColor = Color.blue
+var SkinsPlayerTwoRectangleColor = Color.teal
 var SkinsPlayerThreeRectangleColor = Color.blue
-var SkinsPlayerFourRectangleColor = Color.green
+var SkinsPlayerFourRectangleColor = Color.teal
 
 struct SkinsGameScoreCard: View{
     
@@ -52,26 +52,26 @@ struct SkinsGameScoreCard: View{
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(SKINS_PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(SKINS_PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(SKINS_PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(SKINS_PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -89,31 +89,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 0).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 0).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 0).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -131,31 +131,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 1).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 1).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 1).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -173,31 +173,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 2).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 2).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 2).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -215,31 +215,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 3).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 3).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 3).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -257,31 +257,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 4).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 4).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 4).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -299,31 +299,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 5).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 5).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 5).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -341,31 +341,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 6).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 6).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 6).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -383,31 +383,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 7).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 7).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 7).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -425,31 +425,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 8).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 8).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 8).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -478,26 +478,26 @@ struct SkinsGameScoreCard: View{
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(SKINS_PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(SKINS_PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(SKINS_PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(SKINS_PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -515,31 +515,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 9).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 9).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 9).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -557,31 +557,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 10).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 10).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 10).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -599,31 +599,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 11).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 11).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 11).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -641,31 +641,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 12).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 12).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 12).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -683,31 +683,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 13).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 13).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 13).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -725,31 +725,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 14).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 14).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 14).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -767,31 +767,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 15).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 15).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 15).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -809,31 +809,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 16).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 16).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 16).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -851,31 +851,31 @@ struct SkinsGameScoreCard: View{
                             
                             ZStack{
                                 Rectangle().frame(width: smallRectangleWidth, height: rectangleHeight).foregroundColor(.black).cornerRadius(5)
-                                Text(String(PLAYER_ONE.getGolfHole(holeIndex: 17).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
+                                Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 17).getParNumber())).foregroundColor(.white).fontDesign(.rounded)
                             }
                             
                             HStack(spacing: 0){
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneRectangleColor)
-                                    Text(String(PLAYER_ONE.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(SkinsPlayerOneRectangleColor)
+                                    Text(String(SKINS_PLAYER_ONE.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerTwoRectangleColor)
-                                    Text(String(PLAYER_TWO.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerTwoRectangleColor)
+                                    Text(String(SKINS_PLAYER_TWO.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(playerThreeRectangleColor)
-                                    Text(String(PLAYER_THREE.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).foregroundColor(SkinsPlayerThreeRectangleColor)
+                                    Text(String(SKINS_PLAYER_THREE.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                                 
                                 ZStack{
-                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourRectangleColor)
-                                    Text(String(PLAYER_FOUR.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
+                                    Rectangle().frame(width: rectangleWidth, height: rectangleHeight).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(SkinsPlayerFourRectangleColor)
+                                    Text(String(SKINS_PLAYER_FOUR.getGolfHole(holeIndex: 17).getPlayerStrokes())).foregroundColor(Color.white)
                                         .fontDesign(.rounded)
                                 }
                             }
@@ -914,7 +914,7 @@ struct SkinsGameScoreCard: View{
                     saveButtonColor = Color.gray
                     saveButtonMessage = "Saved"
                     saveButtonDisabled = true
-                    saveSPGameScores()
+                    saveSkinsGameScores()
                 }, label: {
                     ZStack{
                         Rectangle().frame(width: 240, height: 40).cornerRadius(5).shadow(radius: 3).foregroundColor(saveButtonColor)
@@ -938,10 +938,10 @@ struct SkinsGameScoreCard: View{
         }.navigationTitle("Scorecard")
     }
     
-    func saveSPGameScores() -> Void{
+    func saveSkinsGameScores() -> Void{
         
         let gamePlayed = 1
-        var gameWon = 0
+        var skinsWon = 0
         var par = 0
         var birdie = 0
         var eagle = 0
@@ -951,15 +951,15 @@ struct SkinsGameScoreCard: View{
         var tripleBogey = 0
         var quadrupleBogey = 0
         
-        if SPPlayer == 1{
+        if SkinsPlayer == 1{
                 
             var holeStrokes = 0
             var holePar = 0
             
-            for i in 0...(numOfHoles - 1){
+            for i in 0...(skinsNumOfHoles - 1){
                     
-                    holeStrokes = PLAYER_ONE.getGolfHole(holeIndex: i).getPlayerStrokes()
-                    holePar = PLAYER_ONE.getGolfHole(holeIndex: i).getParNumber()
+                    holeStrokes = SKINS_PLAYER_ONE.getGolfHole(holeIndex: i).getPlayerStrokes()
+                    holePar = SKINS_PLAYER_ONE.getGolfHole(holeIndex: i).getParNumber()
                     
                     if holeStrokes - holePar == 4{
                         quadrupleBogey += 1
@@ -980,19 +980,17 @@ struct SkinsGameScoreCard: View{
                     }
                 }
             
-            if determineWinner() == 1{
-                gameWon += 1
-            }
             
-        } else if SPPlayer == 2{
+            
+        } else if SkinsPlayer == 2{
             
             var holeStrokes = 0
             var holePar = 0
             
-            for i in 0...(numOfHoles - 1){
+            for i in 0...(skinsNumOfHoles - 1){
                 
-                holeStrokes = PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
-                holePar = PLAYER_TWO.getGolfHole(holeIndex: i).getParNumber()
+                holeStrokes = SKINS_PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
+                holePar = SKINS_PLAYER_TWO.getGolfHole(holeIndex: i).getParNumber()
                 
                 if holeStrokes - holePar == 4{
                     quadrupleBogey += 1
@@ -1013,19 +1011,16 @@ struct SkinsGameScoreCard: View{
                 }
             }
             
-            if determineWinner() == 2{
-                gameWon += 1
-            }
             
-        } else if SPPlayer == 3{
+        } else if SkinsPlayer == 3{
             
             var holeStrokes = 0
             var holePar = 0
             
-            for i in 0...(numOfHoles - 1){
+            for i in 0...(skinsNumOfHoles - 1){
                 
-                holeStrokes = PLAYER_THREE.getGolfHole(holeIndex: i).getPlayerStrokes()
-                holePar = PLAYER_THREE.getGolfHole(holeIndex: i).getParNumber()
+                holeStrokes = SKINS_PLAYER_THREE.getGolfHole(holeIndex: i).getPlayerStrokes()
+                holePar = SKINS_PLAYER_THREE.getGolfHole(holeIndex: i).getParNumber()
                 
                 if holeStrokes - holePar == 4{
                     quadrupleBogey += 1
@@ -1046,19 +1041,16 @@ struct SkinsGameScoreCard: View{
                 }
             }
             
-            if determineWinner() == 3{
-                gameWon += 1
-            }
             
-        } else if SPPlayer == 4{
+        } else if SkinsPlayer == 4{
             
             var holeStrokes = 0
             var holePar = 0
             
-            for i in 0...(numOfHoles - 1){
+            for i in 0...(skinsNumOfHoles - 1){
                 
-                holeStrokes = PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
-                holePar = PLAYER_TWO.getGolfHole(holeIndex: i).getParNumber()
+                holeStrokes = SKINS_PLAYER_FOUR.getGolfHole(holeIndex: i).getPlayerStrokes()
+                holePar = SKINS_PLAYER_FOUR.getGolfHole(holeIndex: i).getParNumber()
                 
                 if holeStrokes - holePar == 4{
                     quadrupleBogey += 1
@@ -1079,83 +1071,44 @@ struct SkinsGameScoreCard: View{
                 }
             }
             
-            if determineWinner() == 4{
-                gameWon += 1
-            }
+            
         }
         
-        StatsView().updateSPStatistics(gamesPlayed: gamePlayed, gamesWon: gameWon, par: par, birdie: birdie, eagle: eagle, albatross: albatross, bogey: bogey, doubleBogey: doubleBogey, tripleBogey: tripleBogey, quadrupleBogey: quadrupleBogey)
+        StatsView().updateSkinsStatistics(gamesPlayed: gamePlayed, gamesWon: gameWon, par: par, birdie: birdie, eagle: eagle, albatross: albatross, bogey: bogey, doubleBogey: doubleBogey, tripleBogey: tripleBogey, quadrupleBogey: quadrupleBogey)
         
-    }
-    
-    func determineWinner() -> Int{
-        
-        var winner = 0
-        
-        var playerOneStrokesTotal = 0
-        var playerTwoStrokesTotal = 0
-        var playerThreeStrokesTotal = 0
-        var playerFourStrokesTotal = 0
-        
-        playerOneStrokesTotal = playerOneTotalStrokes()
-        playerTwoStrokesTotal = playerTwoTotalStrokes()
-        playerThreeStrokesTotal = playerThreeTotalStrokes()
-        playerFourStrokesTotal = playerFourTotalStrokes()
-        
-        if (playerOneStrokesTotal < playerTwoStrokesTotal) && (playerOneStrokesTotal < playerThreeStrokesTotal) && (playerOneStrokesTotal < playerFourStrokesTotal){
-            
-            winner = 1
-            
-        } else if (playerTwoStrokesTotal < playerOneStrokesTotal) && (playerTwoStrokesTotal < playerThreeStrokesTotal) && (playerTwoStrokesTotal < playerFourStrokesTotal){
-            
-            winner = 2
-            
-        } else if (playerThreeStrokesTotal < playerOneStrokesTotal) && (playerThreeStrokesTotal < playerTwoStrokesTotal) && (playerThreeStrokesTotal < playerFourStrokesTotal){
-            
-            winner = 3
-            
-        } else if (playerFourStrokesTotal < playerOneStrokesTotal) && (playerFourStrokesTotal < playerTwoStrokesTotal) && (playerFourStrokesTotal < playerThreeStrokesTotal){
-            
-            winner = 4
-            
-        }
-            
-            return winner
     }
     
     func playerOneTotalStrokes() -> Int{
         var totalStrokes = 0
-        for i in 0...(numOfHoles - 1){
-            totalStrokes += PLAYER_ONE.getGolfHole(holeIndex: i).getPlayerStrokes()
+        for i in 0...(skinsNumOfHoles - 1){
+            totalStrokes += SKINS_PLAYER_ONE.getGolfHole(holeIndex: i).getPlayerStrokes()
         }
         return totalStrokes
     }
     
     func playerTwoTotalStrokes() -> Int{
         var totalStrokes = 0
-        for i in 0...(numOfHoles - 1){
-            totalStrokes += PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
+        for i in 0...(skinsNumOfHoles - 1){
+            totalStrokes += SKINS_PLAYER_TWO.getGolfHole(holeIndex: i).getPlayerStrokes()
         }
         return totalStrokes
     }
     
     func playerThreeTotalStrokes() -> Int{
         var totalStrokes = 0
-        for i in 0...(numOfHoles - 1){
-            totalStrokes += PLAYER_THREE.getGolfHole(holeIndex: i).getPlayerStrokes()
+        for i in 0...(skinsNumOfHoles - 1){
+            totalStrokes += SKINS_PLAYER_THREE.getGolfHole(holeIndex: i).getPlayerStrokes()
         }
         return totalStrokes
     }
     
     func playerFourTotalStrokes() -> Int{
         var totalStrokes = 0
-        for i in 0...(numOfHoles - 1){
-            totalStrokes += PLAYER_FOUR.getGolfHole(holeIndex: i).getPlayerStrokes()
+        for i in 0...(skinsNumOfHoles - 1){
+            totalStrokes += SKINS_PLAYER_FOUR.getGolfHole(holeIndex: i).getPlayerStrokes()
         }
         return totalStrokes
     }
-    
-    
     
     func changePageNum() -> Void{
         if pageNum == 1{
@@ -1174,9 +1127,9 @@ struct SkinsGameScoreCard: View{
     }
     
     func resetGame() -> Void{
-        holeNum = 1
-        gameDone = false
-        SPHoleGamePlay().resetHole()
+        skinsHoleNum = 1
+        skinsGameDone = false
+        SkinsHoleGamePlay().resetHole()
         
     }
 }

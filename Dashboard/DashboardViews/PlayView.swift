@@ -36,7 +36,7 @@ struct PlayView: View {
                             }
                             
                             Spacer()
-                            Rectangle().foregroundColor(.black).frame(width: 290, height: 10).cornerRadius(5)
+                            Rectangle().foregroundColor(.yellow).frame(width: 290, height: 10).cornerRadius(5)
                             
                             
                         }.frame(width: 290, height: 170)

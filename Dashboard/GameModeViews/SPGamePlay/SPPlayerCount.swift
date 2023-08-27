@@ -37,11 +37,11 @@ struct SPPlayerCount: View {
                     Button(action: {
                         noPlayersSelected = false
                         SPNumOfPlayers = 1
-                        buttonOneColor = Color.green
+                        buttonOneColor = Color.yellow
                         buttonTwoColor = Color.white
                         buttonThreeColor = Color.white
                         buttonFourColor = Color.white
-                        continueButtonColor = Color.green
+                        continueButtonColor = Color.yellow
                         disablePlayerOptions()
                     }, label: {
                         ZStack{
@@ -56,9 +56,9 @@ struct SPPlayerCount: View {
                         SPNumOfPlayers = 3
                         buttonOneColor = Color.white
                         buttonTwoColor = Color.white
-                        buttonThreeColor = Color.green
+                        buttonThreeColor = Color.yellow
                         buttonFourColor = Color.white
-                        continueButtonColor = Color.green
+                        continueButtonColor = Color.yellow
                         disablePlayerOptions()
                     }, label: {
                         ZStack{
@@ -77,10 +77,10 @@ struct SPPlayerCount: View {
                         noPlayersSelected = false
                         SPNumOfPlayers = 2
                         buttonOneColor = Color.white
-                        buttonTwoColor = Color.green
+                        buttonTwoColor = Color.yellow
                         buttonThreeColor = Color.white
                         buttonFourColor = Color.white
-                        continueButtonColor = Color.green
+                        continueButtonColor = Color.yellow
                         disablePlayerOptions()
                     }, label: {
                         ZStack{
@@ -96,8 +96,8 @@ struct SPPlayerCount: View {
                         buttonOneColor = Color.white
                         buttonTwoColor = Color.white
                         buttonThreeColor = Color.white
-                        buttonFourColor = Color.green
-                        continueButtonColor = Color.green
+                        buttonFourColor = Color.yellow
+                        continueButtonColor = Color.yellow
                         disablePlayerOptions()
                     }, label: {
                         ZStack{
@@ -150,6 +150,14 @@ struct SPPlayerCount: View {
             SPPlayerFourButtonDisabled = false
         }
     }
+    
+    func isOnePlayer() -> Bool{
+        if SkinsNumOfPlayers == 1{
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 
@@ -179,11 +187,11 @@ struct SPPersonalPlayer: View{
             
             Button(action: {
                 SPPlayer = 1
-                playerOneButtonColor = Color.green
+                playerOneButtonColor = Color.yellow
                 playerTwoButtonColor = Color.white
                 playerThreeButtonColor = Color.white
                 playerFourButtonColor = Color.white
-                continueButtonColor = Color.green
+                continueButtonColor = Color.yellow
                 continueButtonDisabled = false
             }, label: {
                 ZStack{
@@ -196,10 +204,10 @@ struct SPPersonalPlayer: View{
             Button(action: {
                 SPPlayer = 2
                 playerOneButtonColor = Color.white
-                playerTwoButtonColor = Color.green
+                playerTwoButtonColor = Color.yellow
                 playerThreeButtonColor = Color.white
                 playerFourButtonColor = Color.white
-                continueButtonColor = Color.green
+                continueButtonColor = Color.yellow
                 continueButtonDisabled = false
             }, label: {
                 ZStack{
@@ -213,9 +221,9 @@ struct SPPersonalPlayer: View{
                 SPPlayer = 3
                 playerOneButtonColor = Color.white
                 playerTwoButtonColor = Color.white
-                playerThreeButtonColor = Color.green
+                playerThreeButtonColor = Color.yellow
                 playerFourButtonColor = Color.white
-                continueButtonColor = Color.green
+                continueButtonColor = Color.yellow
                 continueButtonDisabled = false
             }, label: {
                 ZStack{
@@ -230,8 +238,8 @@ struct SPPersonalPlayer: View{
                 playerOneButtonColor = Color.white
                 playerTwoButtonColor = Color.white
                 playerThreeButtonColor = Color.white
-                playerFourButtonColor = Color.green
-                continueButtonColor = Color.green
+                playerFourButtonColor = Color.yellow
+                continueButtonColor = Color.yellow
                 continueButtonDisabled = false
             }, label: {
                 ZStack{

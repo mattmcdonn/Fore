@@ -10,6 +10,7 @@ import SwiftUI
 var skinsHoleNum = 1
 var skinsGameDone = false
 var skinsParNum = 0
+var numOfSkinsAvailable = 0
 
 struct SkinsParForHole: View{
     
@@ -22,7 +23,7 @@ struct SkinsParForHole: View{
         NavigationStack{
             VStack{
                 
-                Text("Hole " + String(holeNum) + " par").fontDesign(.rounded).font(.system(size: 30)).bold().foregroundColor(.black).padding()
+                Text("Hole " + String(skinsHoleNum) + " par").fontDesign(.rounded).font(.system(size: 30)).bold().foregroundColor(.black).padding()
                 
                 HStack{
                     Button(action:{
@@ -59,7 +60,7 @@ struct SkinsParForHole: View{
                     })
                 }
                 
-                NavigationLink(destination: SPHoleGamePlay()){
+                NavigationLink(destination: SkinsHoleGamePlay()){
                     
                     ZStack{
                         Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(continueButtonColor)
@@ -69,7 +70,7 @@ struct SkinsParForHole: View{
                 }.padding(.top, 200).disabled(noParSelected)
             }
             
-        }.navigationTitle("Hole " + String(holeNum)).navigationBarBackButtonHidden(true)
+        }.navigationTitle("Hole " + String(skinsHoleNum)).navigationBarBackButtonHidden(true)
     }
     
     func setPar(newValue: Int) -> Void{
@@ -85,7 +86,7 @@ struct SkinsParForHole: View{
             continueButtonColor = Color.white
         }
         
-        parNum = par
+        skinsParNum = par
     }
 }
 
@@ -98,8 +99,8 @@ var skinsPlayerFourStrokes = 0
 
 struct SkinsHoleGamePlay: View {
 
-    @State var numOfPlayers = SPPlayerCount().getNumOfPlayers()
-    @State var numOfHoles = SPHoleCount().getNumOfHoles()
+    @State var numOfPlayers = SkinsPlayerCount().getNumOfPlayers()
+    @State var numOfHoles = SkinsHoleCount().getNumOfHoles()
     @State var numOfStrokes = 0
     
     @State var playerOneTabColor = Color.green
@@ -110,7 +111,7 @@ struct SkinsHoleGamePlay: View {
     @State var currentPlayer = 1
     
     @State var noPrevPlayer = true
-    @State var noNextPlayer = false
+    @State var noNextPlayer = SkinsPlayerCount().isOnePlayer()
     
     @State var notReadyForNextHole = true
     @State var nextHoleButtonColor = Color.white
@@ -123,22 +124,22 @@ struct SkinsHoleGamePlay: View {
                 HStack(spacing: 0){
                     ZStack{
                         Rectangle().frame(width: 80, height: 40).cornerRadius(5, corners: [.topLeft, .bottomLeft]).foregroundColor(playerOneTabColor)
-                        Text(PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
+                        Text(SKINS_PLAYER_ONE.getPlayerName()).foregroundColor(Color.white)
                             .fontDesign(.rounded)
                     }
                     ZStack{
                         Rectangle().frame(width: 80, height: 40).foregroundColor(playerTwoTabColor)
-                        Text(PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
+                        Text(SKINS_PLAYER_TWO.getPlayerName()).foregroundColor(Color.white)
                             .fontDesign(.rounded)
                     }
                     ZStack{
                         Rectangle().frame(width: 80, height: 40).foregroundColor(playerThreeTabColor)
-                        Text(PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
+                        Text(SKINS_PLAYER_THREE.getPlayerName()).foregroundColor(Color.white)
                             .fontDesign(.rounded)
                     }
                     ZStack{
                         Rectangle().frame(width: 80, height: 40).cornerRadius(5, corners: [.topRight, .bottomRight]).foregroundColor(playerFourTabColor)
-                        Text(PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
+                        Text(SKINS_PLAYER_FOUR.getPlayerName()).foregroundColor(Color.white)
                             .fontDesign(.rounded)
                     }
                 }.padding()
@@ -153,13 +154,13 @@ struct SkinsHoleGamePlay: View {
                         if numOfStrokes >= 1{
                             numOfStrokes -= 1
                             if currentPlayer == 1{
-                                playerOneStrokes -= 1
+                                skinsPlayerOneStrokes -= 1
                             } else if currentPlayer == 2{
-                                playerTwoStrokes -= 1
+                                skinsPlayerTwoStrokes -= 1
                             } else if currentPlayer == 3{
-                                playerThreeStrokes -= 1
+                                skinsPlayerThreeStrokes -= 1
                             } else if currentPlayer == 4{
-                                playerFourStrokes -= 1
+                                skinsPlayerFourStrokes -= 1
                             }
                         }
                         
@@ -184,13 +185,13 @@ struct SkinsHoleGamePlay: View {
                     Button(action:{
                         numOfStrokes += 1
                         if currentPlayer == 1{
-                            playerOneStrokes += 1
+                            skinsPlayerOneStrokes += 1
                         } else if currentPlayer == 2{
-                            playerTwoStrokes += 1
+                            skinsPlayerTwoStrokes += 1
                         } else if currentPlayer == 3{
-                            playerThreeStrokes += 1
+                            skinsPlayerThreeStrokes += 1
                         } else if currentPlayer == 4{
-                            playerFourStrokes += 1
+                            skinsPlayerFourStrokes += 1
                         }
                         
                         isReadyForNextHole()
@@ -230,14 +231,14 @@ struct SkinsHoleGamePlay: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: SPPreviousHoleStats().onAppear(perform: nextHole)){
+                NavigationLink(destination: SkinsPreviousHoleStats().onAppear(perform: nextHole)){
                     ZStack{
                         Rectangle().frame(width: 350, height: 60).cornerRadius(5).shadow(radius: 3).foregroundColor(nextHoleButtonColor)
                         Text("Next hole").fontDesign(.rounded).font(.system(size: 18)).bold().foregroundColor(.black)
                     }
                 }.disabled(notReadyForNextHole)
                 
-                NavigationLink(destination: SPEndGame()){
+                NavigationLink(destination: SkinsEndGame()){
                     ZStack{
                         Rectangle().frame(width: 350, height: 60).cornerRadius(5).shadow(radius: 3).foregroundColor(.red)
                         Text("End game").fontDesign(.rounded).font(.system(size: 18)).bold().foregroundColor(.black)
@@ -245,18 +246,18 @@ struct SkinsHoleGamePlay: View {
                     
                 }
             }
-        }.navigationTitle("Hole " + String(holeNum)).navigationBarBackButtonHidden(true)
+        }.navigationTitle("Hole " + String(skinsHoleNum)).navigationBarBackButtonHidden(true)
     }
     
     func getPlayerStrokes(playerNum: Int) -> Int{
         if playerNum == 1{
-            return playerOneStrokes
+            return skinsPlayerOneStrokes
         } else if playerNum == 2{
-            return playerTwoStrokes
+            return skinsPlayerTwoStrokes
         } else if playerNum == 3{
-            return playerThreeStrokes
+            return skinsPlayerThreeStrokes
         } else if playerNum == 4{
-            return playerFourStrokes
+            return skinsPlayerFourStrokes
         } else {
             return 0
         }
@@ -266,68 +267,91 @@ struct SkinsHoleGamePlay: View {
         
         if numOfPlayers == 1{
             
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerOneStrokes)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerOneStrokes)
             
         } else if numOfPlayers == 2{
             
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerOneStrokes)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerOneStrokes)
             
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerTwoStrokes)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerTwoStrokes)
             
         } else if numOfPlayers == 3{
             
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerOneStrokes)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerOneStrokes)
             
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerTwoStrokes)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerTwoStrokes)
             
-            PLAYER_THREE.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_THREE.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_THREE.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerThreeStrokes)
+            SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerThreeStrokes)
             
         } else {
             
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_ONE.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerOneStrokes)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerOneStrokes)
             
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_TWO.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerTwoStrokes)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerTwoStrokes)
             
-            PLAYER_THREE.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_THREE.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_THREE.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerThreeStrokes)
+            SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerThreeStrokes)
             
-            PLAYER_FOUR.getGolfHole(holeIndex: holeNum - 1).setHoleNumber(holeNum: holeNum)
-            PLAYER_FOUR.getGolfHole(holeIndex: holeNum - 1).setParNumber(parNum: parNum)
-            PLAYER_FOUR.getGolfHole(holeIndex: holeNum - 1).setPlayerStrokes(strokeNum: playerFourStrokes)
+            SKINS_PLAYER_FOUR.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
+            SKINS_PLAYER_FOUR.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
+            SKINS_PLAYER_FOUR.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerFourStrokes)
+        }
+        
+        if getPlayerStrokes(playerNum: 1) < getPlayerStrokes(playerNum: 2) && getPlayerStrokes(playerNum: 1) < getPlayerStrokes(playerNum: 3) && getPlayerStrokes(playerNum: 1) < getPlayerStrokes(playerNum: 4){
+            
+            SKINS_PLAYER_ONE.addToSkinsWon()
+            
+            
+            
+        } else if getPlayerStrokes(playerNum: 2) < getPlayerStrokes(playerNum: 1) && getPlayerStrokes(playerNum: 2) < getPlayerStrokes(playerNum: 3) && getPlayerStrokes(playerNum: 2) < getPlayerStrokes(playerNum: 4){
+            
+            SKINS_PLAYER_TWO.addToSkinsWon()
+            
+            
+        } else if getPlayerStrokes(playerNum: 3) < getPlayerStrokes(playerNum: 1) && getPlayerStrokes(playerNum: 3) < getPlayerStrokes(playerNum: 2) && getPlayerStrokes(playerNum: 3) < getPlayerStrokes(playerNum: 4){
+            
+            SKINS_PLAYER_THREE.addToSkinsWon()
+            
+            
+        } else if getPlayerStrokes(playerNum: 4) < getPlayerStrokes(playerNum: 1) && getPlayerStrokes(playerNum: 4) < getPlayerStrokes(playerNum: 2) && getPlayerStrokes(playerNum: 4) < getPlayerStrokes(playerNum: 3){
+            
+            SKINS_PLAYER_FOUR.addToSkinsWon()
+            
+            
         }
         
         resetHole()
         
-        if holeNum < numOfHoles - 1{
-            holeNum += 1
+        if skinsHoleNum < numOfHoles - 1{
+            skinsHoleNum += 1
         } else {
-            holeNum += 1
-            gameDone = true
+            skinsHoleNum += 1
+            skinsGameDone = true
         }
     }
     
     func resetHole() -> Void{
-        playerOneStrokes = 0
-        playerTwoStrokes = 0
-        playerThreeStrokes = 0
-        playerFourStrokes = 0
+        skinsPlayerOneStrokes = 0
+        skinsPlayerTwoStrokes = 0
+        skinsPlayerThreeStrokes = 0
+        skinsPlayerFourStrokes = 0
         
         playerOneTabColor = Color.green
         playerTwoTabColor = Color.gray
@@ -343,9 +367,10 @@ struct SkinsHoleGamePlay: View {
         
         numOfStrokes = 0
         
-        SPParForHole().setPar(newValue: 0)
+        SkinsParForHole().setPar(newValue: 0)
         
-        parNum = 0
+        skinsParNum = 0
+        
     }
     
     func nextPlayer() -> Void{
@@ -354,40 +379,56 @@ struct SkinsHoleGamePlay: View {
             currentPlayer += 1
         }
         
-        if currentPlayer == numOfPlayers{
-            noNextPlayer = true
-        } else {
-            noNextPlayer = false
-        }
+        
         
         if currentPlayer == 1{
             noPrevPlayer = true
-            numOfStrokes = playerOneStrokes
+            numOfStrokes = skinsPlayerOneStrokes
             playerOneTabColor = Color.green
             playerTwoTabColor = Color.gray
             playerThreeTabColor = Color.gray
             playerFourTabColor = Color.gray
+            if numOfPlayers == 1{
+                noNextPlayer = true
+            } else {
+                noNextPlayer = false
+            }
         } else if currentPlayer == 2{
             noPrevPlayer = false
-            numOfStrokes = playerTwoStrokes
+            numOfStrokes = skinsPlayerTwoStrokes
             playerOneTabColor = Color.gray
             playerTwoTabColor = Color.green
             playerThreeTabColor = Color.gray
             playerFourTabColor = Color.gray
+            if numOfPlayers == 2{
+                noNextPlayer = true
+            } else {
+                noNextPlayer = false
+            }
         } else if currentPlayer == 3{
             noPrevPlayer = false
-            numOfStrokes = playerThreeStrokes
+            numOfStrokes = skinsPlayerThreeStrokes
             playerOneTabColor = Color.gray
             playerTwoTabColor = Color.gray
             playerThreeTabColor = Color.green
             playerFourTabColor = Color.gray
+            if numOfPlayers == 3{
+                noNextPlayer = true
+            } else {
+                noNextPlayer = false
+            }
         } else {
             noPrevPlayer = false
-            numOfStrokes = playerFourStrokes
+            numOfStrokes = skinsPlayerFourStrokes
             playerOneTabColor = Color.gray
             playerTwoTabColor = Color.gray
             playerThreeTabColor = Color.gray
             playerFourTabColor = Color.green
+            if numOfPlayers == 4{
+                noNextPlayer = true
+            } else {
+                noNextPlayer = false
+            }
         }
         
     }
@@ -398,68 +439,82 @@ struct SkinsHoleGamePlay: View {
             currentPlayer -= 1
         }
         
-        if currentPlayer == numOfPlayers{
-            noNextPlayer = true
-        } else {
-            noNextPlayer = false
-        }
-        
         if currentPlayer == 1{
             noPrevPlayer = true
-            numOfStrokes = playerOneStrokes
+            numOfStrokes = skinsPlayerOneStrokes
             playerOneTabColor = Color.green
             playerTwoTabColor = Color.gray
             playerThreeTabColor = Color.gray
             playerFourTabColor = Color.gray
+            if numOfPlayers == 1{
+                noNextPlayer = true
+            } else {
+                noNextPlayer = false
+            }
         } else if currentPlayer == 2{
             noPrevPlayer = false
-            numOfStrokes = playerTwoStrokes
+            numOfStrokes = skinsPlayerTwoStrokes
             playerOneTabColor = Color.gray
             playerTwoTabColor = Color.green
             playerThreeTabColor = Color.gray
             playerFourTabColor = Color.gray
+            if numOfPlayers == 2{
+                noNextPlayer = true
+            } else {
+                noNextPlayer = false
+            }
         } else if currentPlayer == 3{
             noPrevPlayer = false
-            numOfStrokes = playerThreeStrokes
+            numOfStrokes = skinsPlayerThreeStrokes
             playerOneTabColor = Color.gray
             playerTwoTabColor = Color.gray
             playerThreeTabColor = Color.green
             playerFourTabColor = Color.gray
+            if numOfPlayers == 3{
+                noNextPlayer = true
+            } else {
+                noNextPlayer = false
+            }
         } else {
             noPrevPlayer = false
-            numOfStrokes = playerFourStrokes
+            numOfStrokes = skinsPlayerFourStrokes
             playerOneTabColor = Color.gray
             playerTwoTabColor = Color.gray
             playerThreeTabColor = Color.gray
             playerFourTabColor = Color.green
+            if numOfPlayers == 4{
+                noNextPlayer = true
+            } else {
+                noNextPlayer = false
+            }
         }
     }
     
     func getCurrentPlayersName() -> String{
         if currentPlayer == 1{
-            return PLAYER_ONE.getPlayerName()
+            return SKINS_PLAYER_ONE.getPlayerName()
         } else if currentPlayer == 2{
-            return PLAYER_TWO.getPlayerName()
+            return SKINS_PLAYER_TWO.getPlayerName()
         } else if currentPlayer == 3{
-            return PLAYER_THREE.getPlayerName()
+            return SKINS_PLAYER_THREE.getPlayerName()
         } else {
-            return PLAYER_FOUR.getPlayerName()
+            return SKINS_PLAYER_FOUR.getPlayerName()
         }
     }
     
     func isReadyForNextHole() -> Void{
-        if numOfPlayers == 1 && playerOneStrokes > 0 {
+        if numOfPlayers == 1 && skinsPlayerOneStrokes > 0 {
             notReadyForNextHole = false
             nextHoleButtonColor = Color.green
-        } else if numOfPlayers == 2 && playerOneStrokes > 0 && playerTwoStrokes > 0{
-            notReadyForNextHole = false
-            nextHoleButtonColor = Color.green
-            
-        } else if numOfPlayers == 3 && playerOneStrokes > 0 && playerTwoStrokes > 0 && playerThreeStrokes > 0{
+        } else if numOfPlayers == 2 && skinsPlayerOneStrokes > 0 && skinsPlayerTwoStrokes > 0{
             notReadyForNextHole = false
             nextHoleButtonColor = Color.green
             
-        } else if numOfPlayers == 4 && playerOneStrokes > 0 && playerTwoStrokes > 0 && playerThreeStrokes > 0 && playerFourStrokes > 0{
+        } else if numOfPlayers == 3 && skinsPlayerOneStrokes > 0 && skinsPlayerTwoStrokes > 0 && skinsPlayerThreeStrokes > 0{
+            notReadyForNextHole = false
+            nextHoleButtonColor = Color.green
+            
+        } else if numOfPlayers == 4 && skinsPlayerOneStrokes > 0 && skinsPlayerTwoStrokes > 0 && skinsPlayerThreeStrokes > 0 && skinsPlayerFourStrokes > 0{
             notReadyForNextHole = false
             nextHoleButtonColor = Color.green
         } else {
@@ -467,6 +522,7 @@ struct SkinsHoleGamePlay: View {
             nextHoleButtonColor = Color.white
         }
     }
+    
 }
 
 struct SkinsEndGame: View{
@@ -478,7 +534,7 @@ struct SkinsEndGame: View{
             Text("End current golf game").font(.system(size: 20))
             
             
-            NavigationLink(destination: PlayView().onAppear(perform: SPGameScoreCard().resetGame)){
+            NavigationLink(destination: PlayView().onAppear(perform: SkinsGameScoreCard().resetGame)){
                 Text("End game").frame(width: 150, height: 40).foregroundColor(.white).background(Color.red).cornerRadius(5)
             }.padding()
             
@@ -496,7 +552,7 @@ struct SkinsPreviousHoleStats: View{
     var body: some View{
         NavigationStack{
             VStack{
-                Text("Hole " + String(holeNum) + " complete").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black).padding()
+                Text("Hole " + String(skinsHoleNum) + " complete").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black).padding()
                 
                 ZStack{
                     
@@ -507,30 +563,29 @@ struct SkinsPreviousHoleStats: View{
                             Spacer()
                         }.padding(.bottom)
                         HStack{
-                            Text(String(SPHoleGamePlay().getPlayerStrokes(playerNum: 1)) + " Player One strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                            Text(String(SkinsHoleGamePlay().getPlayerStrokes(playerNum: 1)) + " Player One strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                             Spacer()
                         }
-                        if SPNumOfPlayers >= 2{
+                        if SkinsNumOfPlayers >= 2{
                             HStack{
-                                Text(String(SPHoleGamePlay().getPlayerStrokes(playerNum: 2)) + " Player Two Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                Text(String(SkinsHoleGamePlay().getPlayerStrokes(playerNum: 2)) + " Player Two Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                                 Spacer()
                             }
                         }
                         
-                        if SPNumOfPlayers >= 3{
+                        if SkinsNumOfPlayers >= 3{
                             HStack{
-                                Text(String(SPHoleGamePlay().getPlayerStrokes(playerNum: 3)) + " Player Three Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                Text(String(SkinsHoleGamePlay().getPlayerStrokes(playerNum: 3)) + " Player Three Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                                 Spacer()
                             }
                         }
                         
-                        if SPNumOfPlayers == 4{
+                        if SkinsNumOfPlayers == 4{
                             HStack{
-                                Text(String(SPHoleGamePlay().getPlayerStrokes(playerNum: 4)) + " Player Four Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                Text(String(SkinsHoleGamePlay().getPlayerStrokes(playerNum: 4)) + " Player Four Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                                 Spacer()
                             }
                         }
-                        
                         
                         Spacer()
                         
@@ -538,17 +593,17 @@ struct SkinsPreviousHoleStats: View{
                         
                     }.frame(width: 290, height: 370)
                 }.padding()
-                
-                if gameDone == false{
-                    NavigationLink(destination: SPParForHole()){
+                 
+                if skinsGameDone == false{
+                    NavigationLink(destination: SkinsParForHole()){
                         ZStack{
                             Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(.green)
                             Text("Continue").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
                         }
                     }.padding()
                     
-                } else if gameDone == true{
-                    NavigationLink(destination: viewTotalPlayerScores()){
+                } else if skinsGameDone == true{
+                    NavigationLink(destination: SkinsViewTotalPlayerScores()){
                         ZStack{
                             Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(.green)
                             Text("Finish").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
@@ -577,30 +632,30 @@ struct SkinsViewTotalPlayerScores: View{
                         Rectangle().foregroundColor(Color.white).frame(width: 320, height: 400).cornerRadius(5).shadow(radius: 5)
                         VStack{
                             HStack{
-                                Text("Total player strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                Text("Skins won by players").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                                 Spacer()
                             }.padding(.bottom)
                             HStack{
-                                Text(String(SPGameScoreCard().playerOneTotalStrokes()) + " Player One strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                Text("Player One won " + String(SKINS_PLAYER_ONE.getSkinsWon()) + " skins").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                                 Spacer()
                             }
-                            if SPNumOfPlayers >= 2{
+                            if SkinsNumOfPlayers >= 2{
                                 HStack{
-                                    Text(String(SPGameScoreCard().playerTwoTotalStrokes()) + " Player Two Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                    Text("Player Two won " + String(SKINS_PLAYER_TWO.getSkinsWon()) + " skins").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                                     Spacer()
                                 }
                             }
                             
-                            if SPNumOfPlayers >= 3{
+                            if SkinsNumOfPlayers >= 3{
                                 HStack{
-                                    Text(String(SPGameScoreCard().playerThreeTotalStrokes()) + " Player Three Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                    Text("Player Three won " + String(SKINS_PLAYER_THREE.getSkinsWon()) + " skins").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                                     Spacer()
                                 }
                             }
                             
-                            if SPNumOfPlayers == 4{
+                            if SkinsNumOfPlayers == 4{
                                 HStack{
-                                    Text(String(SPGameScoreCard().playerFourTotalStrokes()) + " Player Four Strokes").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                    Text("Player Four won " + String(SKINS_PLAYER_FOUR.getSkinsWon()) + " skins").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
                                     Spacer()
                                 }
                             }
@@ -613,7 +668,7 @@ struct SkinsViewTotalPlayerScores: View{
                         }.frame(width: 290, height: 370)
                     }.padding()
                     
-                        NavigationLink(destination: SPGameScoreCard()){
+                        NavigationLink(destination: SkinsGameScoreCard()){
                             ZStack{
                                 Rectangle().frame(width: 240, height: 50).cornerRadius(5).shadow(radius: 3).foregroundColor(.green)
                                 Text("Scorecard").fontDesign(.rounded).font(.system(size: 20)).bold().foregroundColor(.black)
