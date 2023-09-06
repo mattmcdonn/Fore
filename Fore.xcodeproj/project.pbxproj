@@ -148,6 +148,13 @@
 			path = StatsOptionViews;
 			sourceTree = "<group>";
 		};
+		8236A9AC2A9BD226005E55BB /* MPGamePlay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MPGamePlay;
+			sourceTree = "<group>";
+		};
 		8242091C2A60829B00A5CA2C /* SkinsGamePlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +188,7 @@
 		82FDBFE22A2FD26B0018F462 /* GameModeViews */ = {
 			isa = PBXGroup;
 			children = (
+				8236A9AC2A9BD226005E55BB /* MPGamePlay */,
 				8242091C2A60829B00A5CA2C /* SkinsGamePlay */,
 				82FA561D2A3100C9004CAD8F /* SPGamePlay */,
 				82FDBFE62A3040570018F462 /* GameInstructionViews */,

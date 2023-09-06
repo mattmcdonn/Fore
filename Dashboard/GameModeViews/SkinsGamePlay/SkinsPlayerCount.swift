@@ -133,17 +133,17 @@ struct SkinsPlayerCount: View {
             SkinsPlayerTwoButtonDisabled = true
             SkinsPlayerThreeButtonDisabled = true
             SkinsPlayerFourButtonDisabled = true
-        } else if SPNumOfPlayers == 2{
+        } else if SkinsNumOfPlayers == 2{
             SkinsPlayerOneButtonDisabled = false
             SkinsPlayerTwoButtonDisabled = false
             SkinsPlayerThreeButtonDisabled = true
             SkinsPlayerFourButtonDisabled = true
-        } else if SPNumOfPlayers == 3{
+        } else if SkinsNumOfPlayers == 3{
             SkinsPlayerOneButtonDisabled = false
             SkinsPlayerTwoButtonDisabled = false
             SkinsPlayerThreeButtonDisabled = false
             SkinsPlayerFourButtonDisabled = true
-        } else if SPNumOfPlayers == 4{
+        } else if SkinsNumOfPlayers == 4{
             SkinsPlayerOneButtonDisabled = false
             SkinsPlayerTwoButtonDisabled = false
             SkinsPlayerThreeButtonDisabled = false

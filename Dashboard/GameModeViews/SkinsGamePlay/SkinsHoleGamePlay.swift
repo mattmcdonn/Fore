@@ -632,7 +632,7 @@ struct SkinsViewTotalPlayerScores: View{
                         Rectangle().foregroundColor(Color.white).frame(width: 320, height: 400).cornerRadius(5).shadow(radius: 5)
                         VStack{
                             HStack{
-                                Text("Skins won by players").fontDesign(.rounded).font(.system(size: 25)).bold().foregroundColor(.black)
+                                Text("Skins won by players").fontDesign(.rounded).font(.system(size:  25)).bold().foregroundColor(.black)
                                 Spacer()
                             }.padding(.bottom)
                             HStack{

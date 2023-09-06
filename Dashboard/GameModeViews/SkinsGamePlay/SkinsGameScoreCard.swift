@@ -980,7 +980,7 @@ struct SkinsGameScoreCard: View{
                     }
                 }
             
-            
+            skinsWon += SKINS_PLAYER_ONE.getSkinsWon()
             
         } else if SkinsPlayer == 2{
             
@@ -1011,6 +1011,7 @@ struct SkinsGameScoreCard: View{
                 }
             }
             
+            skinsWon += SKINS_PLAYER_TWO.getSkinsWon()
             
         } else if SkinsPlayer == 3{
             
@@ -1041,6 +1042,7 @@ struct SkinsGameScoreCard: View{
                 }
             }
             
+            skinsWon += SKINS_PLAYER_THREE.getSkinsWon()
             
         } else if SkinsPlayer == 4{
             
@@ -1071,10 +1073,11 @@ struct SkinsGameScoreCard: View{
                 }
             }
             
+            skinsWon += SKINS_PLAYER_FOUR.getSkinsWon()
             
         }
         
-        StatsView().updateSkinsStatistics(gamesPlayed: gamePlayed, gamesWon: gameWon, par: par, birdie: birdie, eagle: eagle, albatross: albatross, bogey: bogey, doubleBogey: doubleBogey, tripleBogey: tripleBogey, quadrupleBogey: quadrupleBogey)
+        StatsView().updateSkinsStatistics(gamesPlayed: gamePlayed, skinsWon: skinsWon, par: par, birdie: birdie, eagle: eagle, albatross: albatross, bogey: bogey, doubleBogey: doubleBogey, tripleBogey: tripleBogey, quadrupleBogey: quadrupleBogey)
         
     }
     
@@ -1130,7 +1133,10 @@ struct SkinsGameScoreCard: View{
         skinsHoleNum = 1
         skinsGameDone = false
         SkinsHoleGamePlay().resetHole()
-        
+        SKINS_PLAYER_ONE.setSkinsWon(newInt: 0)
+        SKINS_PLAYER_TWO.setSkinsWon(newInt: 0)
+        SKINS_PLAYER_THREE.setSkinsWon(newInt: 0)
+        SKINS_PLAYER_FOUR.setSkinsWon(newInt: 0)
     }
 }
 

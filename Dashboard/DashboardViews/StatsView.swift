@@ -56,7 +56,7 @@ struct StatsView: View {
     @AppStorage("SP_QUADRUPLE_BOGEY") var SPQuadrupleBogey = 0
     
     @AppStorage("SKINS_GAMES_PLAYED") var SkinsGamesPlayed = 0
-    @AppStorage("SKINS_GAMES_WON") var SkinsGamesWon = 0
+    @AppStorage("SKINS_SKINS_WON") var SkinsWon = 0
     @AppStorage("SKINS_PAR") var SkinsPar = 0
     @AppStorage("SKINS_BIRDIE") var SkinsBirdie = 0
     @AppStorage("SKINS_EAGLE") var SkinsEagle = 0
@@ -279,7 +279,7 @@ struct StatsView: View {
                         
                         VStack{
                             VStack{
-                                Text(String(SkinsGamesWon)).font(.system(size: 30))
+                                Text(String(SkinsWon)).font(.system(size: 30))
                                 Text("Games won")
                             }
                             Spacer()
@@ -390,10 +390,10 @@ struct StatsView: View {
         SPQuadrupleBogey += quadrupleBogey
     }
     
-    func updateSkinsStatistics(gamesPlayed: Int, gamesWon: Int, par: Int, birdie: Int, eagle: Int, albatross: Int, bogey: Int, doubleBogey: Int, tripleBogey: Int, quadrupleBogey: Int) -> Void{
+    func updateSkinsStatistics(gamesPlayed: Int, skinsWon: Int, par: Int, birdie: Int, eagle: Int, albatross: Int, bogey: Int, doubleBogey: Int, tripleBogey: Int, quadrupleBogey: Int) -> Void{
         
         SkinsGamesPlayed += gamesPlayed
-        SkinsGamesWon += gamesWon
+        SkinsWon += skinsWon
         SkinsPar += par
         SkinsBirdie += birdie
         SkinsEagle += eagle
