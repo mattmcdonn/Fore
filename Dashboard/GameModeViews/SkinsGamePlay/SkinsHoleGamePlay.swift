@@ -271,6 +271,8 @@ struct SkinsHoleGamePlay: View {
             SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
             SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerOneStrokes)
             
+            SKINS_PLAYER_ONE.addToSkinsWon()
+            
         } else if numOfPlayers == 2{
             
             SKINS_PLAYER_ONE.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
@@ -280,6 +282,12 @@ struct SkinsHoleGamePlay: View {
             SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
             SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
             SKINS_PLAYER_TWO.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerTwoStrokes)
+            
+            if skinsPlayerOneStrokes < skinsPlayerTwoStrokes{
+                SKINS_PLAYER_ONE.addToSkinsWon()
+            } else if skinsPlayerTwoStrokes < skinsPlayerOneStrokes{
+                SKINS_PLAYER_TWO.addToSkinsWon()
+            }
             
         } else if numOfPlayers == 3{
             
@@ -294,6 +302,14 @@ struct SkinsHoleGamePlay: View {
             SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
             SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
             SKINS_PLAYER_THREE.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerThreeStrokes)
+            
+            if skinsPlayerOneStrokes < skinsPlayerTwoStrokes && skinsPlayerOneStrokes < skinsPlayerThreeStrokes{
+                SKINS_PLAYER_ONE.addToSkinsWon()
+            } else if skinsPlayerTwoStrokes < skinsPlayerOneStrokes && skinsPlayerTwoStrokes < skinsPlayerThreeStrokes{
+                SKINS_PLAYER_TWO.addToSkinsWon()
+            } else if skinsPlayerThreeStrokes < skinsPlayerOneStrokes && skinsPlayerThreeStrokes < skinsPlayerTwoStrokes{
+                SKINS_PLAYER_THREE.addToSkinsWon()
+            }
             
         } else {
             
@@ -312,6 +328,16 @@ struct SkinsHoleGamePlay: View {
             SKINS_PLAYER_FOUR.getGolfHole(holeIndex: skinsHoleNum - 1).setHoleNumber(holeNum: skinsHoleNum)
             SKINS_PLAYER_FOUR.getGolfHole(holeIndex: skinsHoleNum - 1).setParNumber(parNum: skinsParNum)
             SKINS_PLAYER_FOUR.getGolfHole(holeIndex: skinsHoleNum - 1).setPlayerStrokes(strokeNum: skinsPlayerFourStrokes)
+            
+            if skinsPlayerOneStrokes < skinsPlayerTwoStrokes && skinsPlayerOneStrokes < skinsPlayerThreeStrokes && skinsPlayerOneStrokes < skinsPlayerFourStrokes{
+                SKINS_PLAYER_ONE.addToSkinsWon()
+            } else if skinsPlayerTwoStrokes < skinsPlayerOneStrokes && skinsPlayerTwoStrokes < skinsPlayerThreeStrokes && skinsPlayerTwoStrokes < skinsPlayerFourStrokes{
+                SKINS_PLAYER_TWO.addToSkinsWon()
+            } else if skinsPlayerThreeStrokes < skinsPlayerOneStrokes && skinsPlayerThreeStrokes < skinsPlayerTwoStrokes && skinsPlayerThreeStrokes < skinsPlayerFourStrokes{
+                SKINS_PLAYER_THREE.addToSkinsWon()
+            } else if skinsPlayerFourStrokes < skinsPlayerOneStrokes && skinsPlayerFourStrokes < skinsPlayerTwoStrokes && skinsPlayerFourStrokes < skinsPlayerThreeStrokes{
+                SKINS_PLAYER_FOUR.addToSkinsWon()
+            }
         }
         
         if getPlayerStrokes(playerNum: 1) < getPlayerStrokes(playerNum: 2) && getPlayerStrokes(playerNum: 1) < getPlayerStrokes(playerNum: 3) && getPlayerStrokes(playerNum: 1) < getPlayerStrokes(playerNum: 4){

@@ -179,7 +179,7 @@ struct StatsView: View {
                 }.padding([.leading, .top, .trailing])
                 
                 
-                Text(statType).font(.system(size: 40)).padding(.bottom, 30)
+                Text(statType).font(.system(size: 40)).fontDesign(.rounded).bold().padding(.bottom, 30)
                 
                 if statType == "Stroke play"{
                     HStack{

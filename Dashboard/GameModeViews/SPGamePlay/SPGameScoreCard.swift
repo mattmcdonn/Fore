@@ -1086,9 +1086,13 @@ struct SPGameScoreCard: View{
         
         StatsView().updateSPStatistics(gamesPlayed: gamePlayed, gamesWon: gameWon, par: par, birdie: birdie, eagle: eagle, albatross: albatross, bogey: bogey, doubleBogey: doubleBogey, tripleBogey: tripleBogey, quadrupleBogey: quadrupleBogey)
         
+        AchievementsView().updateSPAchieveStatistics(A1_STAT: gamePlayed, A2_STAT: bogey, A3_STAT: birdie, A4_STAT: par)
+        
     }
     
     func determineWinner() -> Int{
+        
+        // FIX: make sure winner is determined based on the number of players that were active during the game. Current issue is players that don't play have a default score of 0, meaning they would win over players who actually played.
         
         var winner = 0
         
