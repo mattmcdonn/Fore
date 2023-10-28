@@ -4,3 +4,5 @@ At the end of the game, the statistics will be organized into a nice scorecard l
 stored data. Fore offers two modes, regular (stroke play), or skins, which are two of the most popular game types in golf, where different algorithms are used to track and calculate scores.
 The applcation also has a tab for the users achievements, which is just a little fun addition to display for the user. This version of Fore will receive minor updates for bug fixes, and may
 receive additional features in the future. Feel free to view the code and possibly download it to your own mobile device to give it a try!
+
+Please be sure to give credit if you decide to use any of the code I provided :)
