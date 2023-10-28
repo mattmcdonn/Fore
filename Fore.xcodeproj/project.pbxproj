@@ -35,7 +35,6 @@
 		82FDBFD92A2E5A1B0018F462 /* StatInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDBFD82A2E5A1B0018F462 /* StatInfoView.swift */; };
 		82FDBFDB2A2E5A820018F462 /* StrokePlayStatReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDBFDA2A2E5A820018F462 /* StrokePlayStatReset.swift */; };
 		82FDBFDD2A2E693B0018F462 /* SkinStatReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDBFDC2A2E693B0018F462 /* SkinStatReset.swift */; };
-		82FDBFDF2A2E69560018F462 /* MatchPlayStatReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDBFDE2A2E69560018F462 /* MatchPlayStatReset.swift */; };
 		82FDBFE12A2E69740018F462 /* AllStatReset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDBFE02A2E69740018F462 /* AllStatReset.swift */; };
 		82FDBFE52A2FD34A0018F462 /* SPPlayerCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDBFE42A2FD34A0018F462 /* SPPlayerCount.swift */; };
 		82FDBFE82A3047420018F462 /* SPInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FDBFE72A3047420018F462 /* SPInstructions.swift */; };
@@ -73,7 +72,6 @@
 		82FDBFD82A2E5A1B0018F462 /* StatInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatInfoView.swift; sourceTree = "<group>"; };
 		82FDBFDA2A2E5A820018F462 /* StrokePlayStatReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokePlayStatReset.swift; sourceTree = "<group>"; };
 		82FDBFDC2A2E693B0018F462 /* SkinStatReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinStatReset.swift; sourceTree = "<group>"; };
-		82FDBFDE2A2E69560018F462 /* MatchPlayStatReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPlayStatReset.swift; sourceTree = "<group>"; };
 		82FDBFE02A2E69740018F462 /* AllStatReset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStatReset.swift; sourceTree = "<group>"; };
 		82FDBFE42A2FD34A0018F462 /* SPPlayerCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPPlayerCount.swift; sourceTree = "<group>"; };
 		82FDBFE72A3047420018F462 /* SPInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPInstructions.swift; sourceTree = "<group>"; };
@@ -144,17 +142,9 @@
 				82FDBFD82A2E5A1B0018F462 /* StatInfoView.swift */,
 				82FDBFDA2A2E5A820018F462 /* StrokePlayStatReset.swift */,
 				82FDBFDC2A2E693B0018F462 /* SkinStatReset.swift */,
-				82FDBFDE2A2E69560018F462 /* MatchPlayStatReset.swift */,
 				82FDBFE02A2E69740018F462 /* AllStatReset.swift */,
 			);
 			path = StatsOptionViews;
-			sourceTree = "<group>";
-		};
-		8236A9AC2A9BD226005E55BB /* MPGamePlay */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MPGamePlay;
 			sourceTree = "<group>";
 		};
 		8242091C2A60829B00A5CA2C /* SkinsGamePlay */ = {
@@ -190,7 +180,6 @@
 		82FDBFE22A2FD26B0018F462 /* GameModeViews */ = {
 			isa = PBXGroup;
 			children = (
-				8236A9AC2A9BD226005E55BB /* MPGamePlay */,
 				8242091C2A60829B00A5CA2C /* SkinsGamePlay */,
 				82FA561D2A3100C9004CAD8F /* SPGamePlay */,
 				82FDBFE62A3040570018F462 /* GameInstructionViews */,
@@ -315,7 +304,6 @@
 				824209262A61E3D500A5CA2C /* SkinsGolfHole.swift in Sources */,
 				8242092A2A61E3FE00A5CA2C /* SkinsReviewSetup.swift in Sources */,
 				82FDBFE82A3047420018F462 /* SPInstructions.swift in Sources */,
-				82FDBFDF2A2E69560018F462 /* MatchPlayStatReset.swift in Sources */,
 				82FDBFDB2A2E5A820018F462 /* StrokePlayStatReset.swift in Sources */,
 				825EDC1F2A32B49F003A8800 /* SPGolfGame.swift in Sources */,
 				820589E72A2AA46700217BF1 /* AccountView.swift in Sources */,

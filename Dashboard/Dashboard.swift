@@ -12,10 +12,6 @@ struct Dashboard: View {
         // displays tabs at the bottom of UI
         TabView{
             
-            GolfCoursesView().tabItem(){
-                Image(systemName: "figure.golf")
-                Text("Golf Courses")
-            }
             
             StatsView().tabItem(){
                 Image(systemName: "chart.bar")
@@ -35,11 +31,6 @@ struct Dashboard: View {
                 
             }
             
-            AccountView().tabItem(){
-                Image(systemName: "person.fill")
-                Text("Account").fontDesign(.rounded)
-            
-            }
         }.padding([.leading, .trailing])
     }
 }

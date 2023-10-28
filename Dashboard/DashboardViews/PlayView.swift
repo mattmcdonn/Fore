@@ -76,34 +76,6 @@ struct PlayView: View {
                     }
                 }.padding()
                 
-                NavigationLink(destination: SPPlayerCount()){
-                    ZStack{
-                        Rectangle().foregroundColor(Color.white).frame(width: GAME_BOX_WIDTH, height: GAME_BOX_HEIGHT).cornerRadius(5).shadow(radius: 5)
-                        VStack{
-                            HStack{
-                                Text("Match Play").fontDesign(.rounded).font(.system(size: 30)).bold().foregroundColor(.black).padding(.bottom, 5)
-                                
-                                NavigationLink(destination: SPInstructions()){
-                                    Image(systemName: "info.circle.fill").font(.system(size: 20)).foregroundColor(.gray)
-                                }
-                                
-                                Spacer()
-                            }
-                            
-                            HStack{
-                                Text("Play to win the most holes").foregroundColor(.black)
-                                
-                                Spacer()
-                            }
-                            
-                            Spacer()
-                            Rectangle().foregroundColor(.blue).frame(width: 290, height: 10).cornerRadius(5)
-                            
-                            
-                        }.frame(width: GAME_BOX_CONTENT_WIDTH, height: GAME_BOX_CONTENT_HEIGHT)
-                    }
-                }.padding()
-                
                 Spacer()
             }
         }.navigationBarBackButtonHidden(true)

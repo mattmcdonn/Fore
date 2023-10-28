@@ -66,17 +66,6 @@ struct StatsView: View {
     @AppStorage("SKINS_TRIPLE_BOGEY") var SkinsTripleBogey = 0
     @AppStorage("SKINS_QUADRUPLE_BOGEY") var SkinsQuadrupleBogey = 0
     
-    @AppStorage("MP_GAMES_PLAYED") var MPGamesPlayed = 0
-    @AppStorage("MP_GAMES_WON") var MPGamesWon = 0
-    @AppStorage("MP_PAR") var MPPar = 0
-    @AppStorage("MP_BIRDIE") var MPBirdie = 0
-    @AppStorage("MP_EAGLE") var MPEagle = 0
-    @AppStorage("MP_ALBATROSS") var MPAlbatross = 0
-    @AppStorage("MP_BOGEY") var MPBogey = 0
-    @AppStorage("MP_DOUBLE_BOGEY") var MPDoubleBogey = 0
-    @AppStorage("MP_TRIPLE_BOGEY") var MPTripleBogey = 0
-    @AppStorage("MP_QUADRUPLE_BOGEY") var MPQuadrupleBogey = 0
-    
     var body: some View {
        NavigationStack{
             VStack{
@@ -94,9 +83,6 @@ struct StatsView: View {
                                 Label("Reset skins", systemImage: "arrow.counterclockwise")
                             }
                             
-                            NavigationLink(destination: MatchPlayStatReset()){
-                                Label("Reset match play", systemImage: "arrow.counterclockwise")
-                            }
                             NavigationLink(destination: AllStatReset()){
                                 Label("Reset all", systemImage: "arrow.counterclockwise")
                             }
@@ -149,32 +135,11 @@ struct StatsView: View {
                             .foregroundColor(Color.white)
                             .fontDesign(.rounded)
                             .frame(width: 120, height: skinsButtonHeight)
-                            .background(skinsButtonColor)
+                            .background(skinsButtonColor).cornerRadius(5, corners: [.topRight, .bottomRight])
                             .disabled(isSkins)
                         
                     })
                     
-                    Button(action: {
-                        statType = "Match play"
-                        isStrokePlay = false
-                        isSkins = false
-                        isMatchPlay = true
-                        strokePlayButtonColor = Color.green
-                        skinsButtonColor = Color.green
-                        matchPlayButtonColor = Color.gray
-                        strokePlayButtonHeight = 40.0
-                        skinsButtonHeight = 40.0
-                        matchPlayButtonHeight = 38.0
-                    }, label: {
-                        Text("Match play")
-                            .foregroundColor(Color.white)
-                            .fontDesign(.rounded)
-                            .frame(width: 120, height: matchPlayButtonHeight)
-                            .background(matchPlayButtonColor)
-                            .cornerRadius(5, corners: [.topRight, .bottomRight])
-                            .disabled(isMatchPlay)
-                        
-                    })
                     
                 }.padding([.leading, .top, .trailing])
                 
@@ -280,7 +245,7 @@ struct StatsView: View {
                         VStack{
                             VStack{
                                 Text(String(SkinsWon)).font(.system(size: 30))
-                                Text("Games won")
+                                Text("Skins won")
                             }
                             Spacer()
                             VStack{
@@ -306,69 +271,6 @@ struct StatsView: View {
                         }.padding().scaledToFit()
                     }.scaledToFit()
                     
-                    
-                    
-                } else if statType == "Match play"{
-                    HStack{
-                        VStack{
-                            VStack{
-                                Text(String(MPGamesPlayed)).font(.system(size: 30))
-                                Text("Games played")
-                            }
-                            Spacer()
-                            VStack{
-                                Text(String(MPPar)).font(.system(size: 30))
-                                Text("Par")
-                            }
-                            Spacer()
-                            VStack{
-                                Text(String(MPEagle)).font(.system(size: 30))
-                                Text("Eagle")
-                            }
-                            Spacer()
-                            VStack{
-                                Text(String(MPBogey)).font(.system(size: 30))
-                                Text("Bogey")
-                            }
-                            Spacer()
-                            VStack{
-                                Text(String(MPTripleBogey)).font(.system(size: 30))
-                                Text("Triple Bogey")
-                            }
-                            Spacer()
-                        }.padding().scaledToFit()
-                        
-                        
-                        
-                        
-                        VStack{
-                            VStack{
-                                Text(String(MPGamesWon)).font(.system(size: 30))
-                                Text("Games won")
-                            }
-                            Spacer()
-                            VStack{
-                                Text(String(MPBirdie)).font(.system(size: 30))
-                                Text("Birdie")
-                            }
-                            Spacer()
-                            VStack{
-                                Text(String(MPAlbatross)).font(.system(size: 30))
-                                Text("Albatross")
-                            }
-                            Spacer()
-                            VStack{
-                                Text(String(MPDoubleBogey)).font(.system(size: 30))
-                                Text("Double Bogey")
-                            }
-                            Spacer()
-                            VStack{
-                                Text(String(MPQuadrupleBogey)).font(.system(size: 30))
-                                Text("Quadruple Bogey")
-                            }
-                            Spacer()
-                        }.padding().scaledToFit()
-                    }.scaledToFit()
                 }
                 
                 Spacer()
@@ -404,20 +306,6 @@ struct StatsView: View {
         SkinsQuadrupleBogey += quadrupleBogey
     }
     
-    func updateMPStatistics(gamesPlayed: Int, gamesWon: Int, par: Int, birdie: Int, eagle: Int, albatross: Int, bogey: Int, doubleBogey: Int, tripleBogey: Int, quadrupleBogey: Int) -> Void{
-        
-        MPGamesPlayed += gamesPlayed
-        MPGamesWon += gamesWon
-        MPPar += par
-        MPBirdie += birdie
-        MPEagle += eagle
-        MPAlbatross += albatross
-        MPBogey += bogey
-        MPDoubleBogey += doubleBogey
-        MPTripleBogey += tripleBogey
-        MPQuadrupleBogey += quadrupleBogey
-    }
-    
     func resetSPStatistics() -> Void{
         SPGamesPlayed = 0
         SPGamesWon = 0
@@ -429,6 +317,23 @@ struct StatsView: View {
         SPDoubleBogey = 0
         SPTripleBogey = 0
         SPQuadrupleBogey = 0
+        AchievementsView().SP_A1_STAT = 0
+        AchievementsView().SP_A2_STAT = 0
+        AchievementsView().SP_A3_STAT = 0
+        AchievementsView().SP_A4_STAT = 0
+    }
+    
+    func resetSkinsStat() -> Void{
+        SkinsGamesPlayed = 0
+        SkinsWon = 0
+        SkinsPar = 0
+        SkinsBirdie = 0
+        SkinsEagle = 0
+        SkinsAlbatross = 0
+        SkinsBogey = 0
+        SkinsDoubleBogey = 0
+        SkinsTripleBogey = 0
+        SkinsQuadrupleBogey = 0
     }
 }
 

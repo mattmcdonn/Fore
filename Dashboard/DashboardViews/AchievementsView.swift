@@ -14,17 +14,11 @@ struct AchievementsView: View {
     @AppStorage("ACHIEVE_3_STAT") var SP_A3_STAT = 0
     @AppStorage("ACHIEVE_4_STAT") var SP_A4_STAT = 0
     
-    // ADD: make the achievements have the progress as a variable, just add the sp_a1_prog ... etc. to the corresponding achievement
-    
-    // ADD: put double in front of operation and test to see if that displays achievements properly
     @State var SP_ACHIEVE_ONE = ForeAchievement(description: "Play 100 games of Stroke Play")
     @State var SP_ACHIEVE_TWO = ForeAchievement(description: "Earn 50 bogeys in Stroke Play")
     @State var SP_ACHIEVE_THREE = ForeAchievement(description: "Earn 25 pars in Stroke Play")
-    @State var SP_ACHIEVE_FOUR = ForeAchievement(description: "Play 10 games of Stroke Play")
-    
-    @State var SP_A3_PROG = (Double(StatsView().SPPar) / 20.0 ) * 100.0
-    @State var SP_A4_PROG = (Double(StatsView().SPBirdie) / 10.0) * 100.0
-    
+    @State var SP_ACHIEVE_FOUR = ForeAchievement(description: "Earn 10 birdies in Stroke Play")
+
     
     @State var achievementProgress = 0.0
     @State var statType = "Stroke play"
@@ -82,30 +76,8 @@ struct AchievementsView: View {
                         .foregroundColor(Color.white)
                         .fontDesign(.rounded)
                         .frame(width: 120, height: skinsButtonHeight)
-                        .background(skinsButtonColor)
+                        .background(skinsButtonColor).cornerRadius(5, corners: [.topRight, .bottomRight])
                         .disabled(isSkins)
-                    
-                })
-                
-                Button(action: {
-                    statType = "Match play"
-                    isStrokePlay = false
-                    isSkins = false
-                    isMatchPlay = true
-                    strokePlayButtonColor = Color.green
-                    skinsButtonColor = Color.green
-                    matchPlayButtonColor = Color.gray
-                    strokePlayButtonHeight = 40.0
-                    skinsButtonHeight = 40.0
-                    matchPlayButtonHeight = 38.0
-                }, label: {
-                    Text("Match play")
-                        .foregroundColor(Color.white)
-                        .fontDesign(.rounded)
-                        .frame(width: 120, height: matchPlayButtonHeight)
-                        .background(matchPlayButtonColor)
-                        .cornerRadius(5, corners: [.topRight, .bottomRight])
-                        .disabled(isMatchPlay)
                     
                 })
                 
@@ -249,10 +221,10 @@ struct AchievementsView: View {
     
     func updateSPAchieveStatistics(A1_STAT: Int, A2_STAT: Int, A3_STAT: Int, A4_STAT: Int) -> Void{
         
-        SP_A1_STAT += A1_STAT
-        SP_A2_STAT += A2_STAT
-        SP_A3_STAT += A3_STAT
-        SP_A4_STAT += A4_STAT
+        SP_A1_STAT += A1_STAT // games played
+        SP_A2_STAT += A2_STAT // bogeys
+        SP_A3_STAT += A3_STAT // pars
+        SP_A4_STAT += A4_STAT // birdies
     }
 }
 

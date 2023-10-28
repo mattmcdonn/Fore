@@ -22,6 +22,8 @@ struct AllStatReset: View {
             Button(action: {
                 resetDisabled = true
                 resetButtonColor = Color.gray
+                StatsView().resetSPStatistics()
+                StatsView().resetSkinsStat()
             }, label: {
                 Text("Reset").frame(width: 100, height: 40).foregroundColor(.white).background(resetButtonColor).cornerRadius(5).disabled(resetDisabled)
             }).padding().disabled(resetDisabled)
