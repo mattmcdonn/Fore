@@ -6,3 +6,5 @@ The applcation also has a tab for the users achievements, which is just a little
 receive additional features in the future. Feel free to view the code and possibly download it to your own mobile device to give it a try!
 
 Please be sure to give credit if you decide to use any of the code I provided :)
+
+NOTE: Dark mode is not yet supported on this app.
