@@ -5,7 +5,7 @@ import SwiftUI
 
 // MARK: -
 /* STRUCT: displays the application dashboard
- to allow easy navigation bettween other views
+ to allow easy navigation between other views
 */
 struct Dashboard: View {
     var body: some View{
